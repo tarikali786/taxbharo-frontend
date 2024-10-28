@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+:root {
+  --brand-color: #4762ff;
+  --heading-color: #333333;
+  --text-color: #333333cc;
+}
+.css-htddyp-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  color: #fff !important;
+  border-color: var(--brand-color) !important;
+  background-color: var(--brand-color) !important;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
