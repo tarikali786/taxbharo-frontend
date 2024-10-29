@@ -7,7 +7,7 @@ export const Business = () => {
     <div className="grid md:grid-cols-3 gap-4 my-14">
       {BusinessData?.map((item, index) => (
         <div key={index} className="text-center md:text-left">
-          <h1 className="text-5xl font-bold text-blue-500 flex">
+          <h1 className="text-5xl font-bold text-blue-500 flex justify-center md:justify-normal">
             {item?.value && (
               <AnimatedNumbers
                 includeComma

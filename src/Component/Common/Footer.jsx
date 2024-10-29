@@ -78,15 +78,15 @@ export const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className="flex items-center  mt-4 md:mt-0 rounded-sm overflow-hidden ">
+        <div className="flex items-center  mt-4 md:mt-0 rounded-lg shadow-xl overflow-hidden ">
           <input
             type="text"
             name=""
             id=""
             placeholder="Enter your email Address"
-            className="border-none outline-none py-2 px-2"
+            className="border-none outline-none py-2 px-4"
           />
-          <p className="bg-black-100 px-2 text-black-500 py-2">Subscribe</p>
+          <p className="bg-black-100 px-2 text-blue-500 py-2">Subscribe</p>
         </div>
       </div>
     </div>

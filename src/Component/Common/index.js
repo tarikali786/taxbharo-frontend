@@ -5,3 +5,4 @@ export * from "./Heading";
 export * from "./Subheading";
 export * from "./Header";
 export * from "./Loading";
+export * from "./WhatsApp";

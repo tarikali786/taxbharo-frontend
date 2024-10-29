@@ -12,6 +12,7 @@ import {
   TermsAndCondition,
   VerifyNumber,
   VerifyOTP,
+  WhatsApp,
 } from "./Component";
 import Layout1 from "./Layout/Layout1";
 import AuthLayout from "./Layout/AuthLayout";
@@ -23,6 +24,7 @@ function App() {
   const location = useLocation();
   return (
     <AnimatePresence>
+      <WhatsApp />
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Layout1 />}>
           <Route index element={<LazyHome />} />
