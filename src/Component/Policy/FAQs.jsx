@@ -9,7 +9,7 @@ export const FAQs = () => {
     window.scrollTo(0, 0);
   });
   return (
-    <div className="md:my-10  w-full md:px-28 lg:px-44 px-2  ">
+    <div className="md:my-10  w-full md:px-10 lg:px-16 xl:px-44 px-2  ">
       <h1 className="text-center md:text-3xl text-2xl text-blue-500  font-semibold  mb-4 underline ">
         Frequently Asked Questions
       </h1>

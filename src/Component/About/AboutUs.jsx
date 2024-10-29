@@ -9,7 +9,7 @@ export const AboutUs = () => {
     window.scrollTo(0, 0);
   });
   return (
-    <div className="w-full md:px-28 lg:px-44 pb-10  px-2">
+    <div className="w-full md:px-10 lg:px-16 xl:px-44 pb-10  px-2">
       <div className="mt-10">
         <h1 className="text-center md:text-3xl text-2xl text-blue-500  font-bold  mb-4  ">
           About Us

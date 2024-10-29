@@ -8,7 +8,7 @@ import { ServiceCard } from "./ServiceCard";
 
 export const Service = () => {
   return (
-    <div className="w-full md:px-28 lg:px-44 md:py-16  px-2 py-10">
+    <div className="w-full md:px-10 lg:px-16 xl:px-44 md:py-16  px-2 py-10">
       <Hero />
       <ServiceCard />
       <FAQ />

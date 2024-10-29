@@ -8,7 +8,7 @@ export const BlogDetails = () => {
   });
 
   return (
-    <div className="w-full md:my-8 md:px-28 lg:px-44  px-2 py-4 flex justify-between gap-2 md:flex-row flex-col-reverse ">
+    <div className="w-full md:my-8 md:px-10 lg:px-16 xl:px-44  px-2 py-4 flex justify-between gap-2 md:flex-row flex-col-reverse ">
       <div className="md:w-2/3">
         <div className="w-full h-48 md:h-96 my-4">
           {isLoading && <SkeletonLoading />}

@@ -31,10 +31,17 @@ export const MobileNavbar = () => {
   };
 
   return (
-    <>
+    <div className=" sticky  top-0 w-full   z-50  md:hidden  px-2  py-5 shadow-md flex items-center justify-between gap-2  bg-white-500">
+      <Link to="/" className=" w-24 h-auto   ">
+        <img
+          src="https://www.taxbharo.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-blue.f73a0aaf.png&w=1920&q=75"
+          alt=""
+        />
+      </Link>
       <div className="md:hidden block" onClick={toggleDrawer(true)}>
-        <MenuIcon className="text-black-500" style={{ fontSize: "34px" }} />
+        <MenuIcon className="text-black-500" style={{ fontSize: "32px" }} />
       </div>
+
       <Drawer
         anchor="right"
         open={open}
@@ -85,6 +92,6 @@ export const MobileNavbar = () => {
           </Link>
         </List>
       </Drawer>
-    </>
+    </div>
   );
 };

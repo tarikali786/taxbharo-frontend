@@ -5,7 +5,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GoogleIcon from "@mui/icons-material/Google";
 export const Footer = () => {
   return (
-    <div className="w-full md:px-28 lg:px-44  px-4 py-12 bg-blue-500 flex justify-between gap-2 md:items-center flex-wrap flex-col  sm:flex-row">
+    <div className="w-full md:px-10 lg:px-16 xl:px-44   px-4 py-12 bg-blue-500 flex justify-between gap-2 md:items-center flex-wrap flex-col  sm:flex-row">
       <Link className=" w-44 md:h-14  ">
         <img
           src="https://www.taxbharo.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.6272d145.png&w=1920&q=75"

@@ -4,22 +4,23 @@ import { useState } from "react";
 export const DesktopNavbar = ({ navbarData }) => {
   const [hoverIndex, setHoverIndex] = useState(null);
   return (
-    <>
+    <div className=" sticky hidden  md:top-12   z-50  md:flex flex-wrap w-full md:px-10 lg:px-16 xl:px-44 px-2  py-4 shadow-sm items-center justify-between gap-2  bg-white-500">
       <Link to="/" className=" md:w-32 md:h-10 w-28 h-8  ">
         <img
           src="https://www.taxbharo.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-blue.f73a0aaf.png&w=1920&q=75"
           alt=""
         />
       </Link>
-      <div className="gap-8 hidden md:flex relative">
-        {navbarData?.map((item, index) => (
+      <div className="xl:gap-8 lg:gap-6 md:gap-4  hidden md:flex relative">
+        {NavbarData?.map((item, index) => (
           <div
             key={index}
             onMouseEnter={() => setHoverIndex(index)}
             className="relative group"
           >
             <p className="cursor-pointer hover:text-blue-500 font-medium text-black">
-              {item?.attributes?.category?.data?.attributes?.Category}
+              {/* {item?.attributes?.category?.data?.attributes?.Category} */}
+              {item?.name}
             </p>
 
             {item?.children && hoverIndex === index && (
@@ -52,6 +53,6 @@ export const DesktopNavbar = ({ navbarData }) => {
           Login
         </Link>
       </div> */}
-    </>
+    </div>
   );
 };

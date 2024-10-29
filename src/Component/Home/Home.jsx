@@ -21,7 +21,7 @@ const Home = () => {
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -100 }}
         transition={{ duration: 0.5 }}
-        className={`w-full md:px-28 lg:px-44  px-2 py-4 ${
+        className={`w-full md:px-10 lg:px-16 xl:px-44  px-2 py-4 ${
           disclaimerModel ? "filter blur-md pointer-events-none" : "" // Apply blur and disable pointer events if disclaimer is open
         }`}
       >

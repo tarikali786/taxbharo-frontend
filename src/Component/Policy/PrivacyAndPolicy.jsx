@@ -22,7 +22,7 @@ export const PrivacyAndPolicy = () => {
   }, []);
 
   return (
-    <div className="w-full md:px-28 lg:px-44 px-2 py-4 my-4">
+    <div className="w-full md:px-10 lg:px-16 xl:px-44 px-2 py-4 my-4">
       <h1 className="text-center md:text-3xl text-2xl text-blue-500  font-semibold  mb-4 underline ">
         Privacy & Policies
       </h1>
