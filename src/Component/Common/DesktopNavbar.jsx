@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import { NavbarData } from "../../data/data";
-import { useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 export const DesktopNavbar = ({ navbarData }) => {
   const [hoverIndex, setHoverIndex] = useState(null);
+  const [activeTab, setActivetab] = useState("");
+  const handleActivetab = useCallback((tab) => {
+    setActivetab(tab);
+  }, []);
+
   return (
     <div className=" sticky hidden  md:top-12   z-50  md:flex flex-wrap w-full md:px-10 lg:px-16 xl:px-44 px-2  py-4 shadow-sm items-center justify-between gap-2  bg-white-500">
       <Link to="/" className=" md:w-32 md:h-10 w-28 h-8  ">
@@ -17,9 +22,14 @@ export const DesktopNavbar = ({ navbarData }) => {
             key={index}
             onMouseEnter={() => setHoverIndex(index)}
             className="relative group"
+            onClick={() => handleActivetab(item?.name)}
           >
-            <p className="cursor-pointer hover:text-blue-500 font-medium text-black">
-              {/* {item?.attributes?.category?.data?.attributes?.Category} */}
+            <p
+              className={`cursor-pointer hover:text-blue-500 font-medium text-black ${
+                activeTab == item?.name &&
+                "text-blue-500 border-b-2  border-blue-500 "
+              }`}
+            >
               {item?.name}
             </p>
 

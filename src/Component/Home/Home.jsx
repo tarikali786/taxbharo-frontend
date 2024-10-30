@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Business } from "./Business";
 import { DownloadApp } from "./DownloadApp";
 import { Insights } from "./Insights";
@@ -6,13 +6,13 @@ import { SearchBar } from "./SearchBar";
 import { Service } from "./Service";
 import { motion } from "framer-motion";
 import { Disclaimer } from "../Model/Disclaimer";
+import { useTaxbharoContext } from "../ContextHook/taxbharoProvider";
 
 const Home = () => {
-  const [disclaimerModel, setDisclaimerModel] = useState(false);
-
-  const CloseDisclaimerModel = () => {
+  const { disclaimerModel, setDisclaimerModel } = useTaxbharoContext();
+  const CloseDisclaimerModel = useCallback(() => {
     setDisclaimerModel(false);
-  };
+  }, []);
 
   return (
     <div className="relative">
@@ -22,7 +22,7 @@ const Home = () => {
         exit={{ opacity: 0, x: -100 }}
         transition={{ duration: 0.5 }}
         className={`w-full md:px-10 lg:px-16 xl:px-44  px-2 py-4 ${
-          disclaimerModel ? "filter blur-md pointer-events-none" : "" // Apply blur and disable pointer events if disclaimer is open
+          disclaimerModel && "filter blur-md pointer-events-none scroll-none"
         }`}
       >
         <SearchBar />
@@ -32,11 +32,7 @@ const Home = () => {
         <DownloadApp />
       </motion.div>
 
-      {disclaimerModel && (
-        <div className="   h-[100vh] w-full   flex items-center justify-center bg-black-500 bg-opacity-50 z-50">
-          <Disclaimer onClick={CloseDisclaimerModel} />
-        </div>
-      )}
+      {disclaimerModel && <Disclaimer onClick={CloseDisclaimerModel} />}
     </div>
   );
 };

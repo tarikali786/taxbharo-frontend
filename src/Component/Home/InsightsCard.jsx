@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { SkeletonLoading } from "../Common/Skeleton";
 import { Link } from "react-router-dom";
 
-export const InsightsCard = ({ item, index }) => {
+export const InsightsCard = memo(({ item, index }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
@@ -26,4 +26,6 @@ export const InsightsCard = ({ item, index }) => {
       </div>
     </Link>
   );
-};
+});
+
+InsightsCard.displayName = "InsightsCard";

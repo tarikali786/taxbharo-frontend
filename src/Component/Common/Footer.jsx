@@ -3,9 +3,17 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GoogleIcon from "@mui/icons-material/Google";
+import { useTaxbharoContext } from "../ContextHook/taxbharoProvider";
+
 export const Footer = () => {
+  const { disclaimerModel } = useTaxbharoContext();
+
   return (
-    <div className="w-full md:px-10 lg:px-16 xl:px-44   px-4 py-12 bg-blue-500 flex justify-between gap-2 md:items-center flex-wrap flex-col  sm:flex-row">
+    <div
+      className={`w-full md:px-10 lg:px-16 xl:px-44   px-4 py-12 bg-blue-500 flex justify-between gap-2 md:items-center flex-wrap flex-col  sm:flex-row  ${
+        disclaimerModel && "filter blur-md pointer-events-none scroll-none"
+      }`}
+    >
       <Link className=" w-44 md:h-14  ">
         <img
           src="https://www.taxbharo.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.6272d145.png&w=1920&q=75"

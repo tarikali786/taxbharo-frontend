@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import Img1 from "../../assets/Service.jpg";
 
 import { Button } from "../Common/Button";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-export const ServiceCard = () => {
+
+export const ServiceCard = memo(() => {
   const [steps, setSteps] = useState([]);
   const response = `Step 1: Submit your enquiry for PAN with us 
   along with the documents required. Step 2: Advisor shall submit 
@@ -103,4 +104,6 @@ export const ServiceCard = () => {
       </div>
     </div>
   );
-};
+});
+
+ServiceCard.displayName = "ServiceCard";

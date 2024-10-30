@@ -1,8 +1,9 @@
 // import { useState } from "react";
 
+import { memo } from "react";
 import { Link } from "react-router-dom";
 
-export const ServiceCard = ({ data }) => {
+export const ServiceCard = memo(({ data }) => {
   // const [isLoading, setIsLoading] = useState(true);
 
   return (
@@ -23,4 +24,6 @@ export const ServiceCard = ({ data }) => {
       </div>
     </Link>
   );
-};
+});
+
+ServiceCard.displayName = "ServiceCard";

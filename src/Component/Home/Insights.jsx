@@ -3,7 +3,6 @@ import { InsightData } from "../../data/data"; // Correct import
 import { InsightsCard } from "./InsightsCard";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
-import { Link } from "react-router-dom";
 import { Button } from "../Common/Button";
 
 export const Insights = () => {

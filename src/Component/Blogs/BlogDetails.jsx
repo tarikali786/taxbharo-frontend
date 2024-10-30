@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { SkeletonLoading } from "../Common/Skeleton";
 
-export const BlogDetails = () => {
+export const BlogDetails = memo(() => {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -79,4 +79,6 @@ export const BlogDetails = () => {
       </div>
     </div>
   );
-};
+});
+
+BlogDetails.displayName = "BlogDetails";
