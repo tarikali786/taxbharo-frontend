@@ -8,8 +8,8 @@ export const Disclaimer = memo(({ onClick }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 px-2 md:px-12 py-6   overflow-y-auto">
-      <div className="bg-white-500 shadow-lg w-full  md:max-w-[70%] rounded-lg max-h-screen overflow-y-auto">
-        <div className="relative p-4 md:px-12 md:py-10">
+      <div className="bg-white-500 px-12 pb-10 shadow-lg w-full  md:max-w-[70%] rounded-lg max-h-screen overflow-y-auto">
+        <div className="relative  md:px-12 md:pt-10">
           <h1 className="text-2xl font-bold text-center text-black mb-8">
             Disclaimer
           </h1>
@@ -20,7 +20,7 @@ export const Disclaimer = memo(({ onClick }) => {
           />
         </div>
 
-        <div className="p-4 text-black ">
+        <div className=" text-black ">
           <p className="text-lg">
             The information contained in this website is for general information
             purposes only. The information is provided by www.taxbharo.in, a

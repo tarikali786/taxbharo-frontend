@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
 import { NavbarData } from "../../data/data";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useState } from "react";
+import { useTaxbharoContext } from "../ContextHook/taxbharoProvider";
+
 export const DesktopNavbar = ({ navbarData }) => {
   const [hoverIndex, setHoverIndex] = useState(null);
   const [activeTab, setActivetab] = useState("");
+  const { disclaimerModel } = useTaxbharoContext();
+
   const handleActivetab = useCallback((tab) => {
     setActivetab(tab);
   }, []);
 
   return (
-    <div className=" sticky hidden  md:top-12   z-50  md:flex flex-wrap w-full md:px-10 lg:px-16 xl:px-44 px-2  py-4 shadow-sm items-center justify-between gap-2  bg-white-500">
+    <div className={`sticky hidden  top-12   z-50  md:flex flex-wrap w-full md:px-10 lg:px-16 xl:px-44 px-2  py-4 shadow-sm items-center justify-between gap-2  bg-white-500 ${disclaimerModel && "filter blur-md pointer-events-none "}`}>
       <Link to="/" className=" md:w-32 md:h-10 w-28 h-8  ">
         <img
           src="https://www.taxbharo.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-blue.f73a0aaf.png&w=1920&q=75"

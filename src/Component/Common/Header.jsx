@@ -8,7 +8,7 @@ export const Header = () => {
   return (
     <div
       className={`bg-blue-500 z-50 justify-between w-full md:px-10 lg:px-16 xl:px-44  px-4 py-3 text-white-500 md:flex hidden  sticky top-0 ${
-        disclaimerModel && "filter blur-md pointer-events-none scroll-none"
+        disclaimerModel && "filter blur-md pointer-events-none "
       }`}
     >
       <div className="text-sm flex items-center gap-1  tracking-wide">
