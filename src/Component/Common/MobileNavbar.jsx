@@ -14,13 +14,13 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
 import { useTaxbharoContext } from "../ContextHook/taxbharoProvider";
 
-export const MobileNavbar = () => {
+export const MobileNavbar = ({ navbardData }) => {
   const [expanded, setExpanded] = useState(null);
   const [open, setOpen] = useState(false);
   const { disclaimerModel } = useTaxbharoContext();
 
   const handleExpand = (index) => {
-    setExpanded(expanded === index ? null : index); // Toggle expand/collapse
+    setExpanded(expanded === index ? null : index);
   };
   const toggleDrawer = (open) => (event) => {
     if (
@@ -61,10 +61,10 @@ export const MobileNavbar = () => {
               alt="Logo"
             />
           </div>
-          {NavbarData.map((item, index) => (
+          {navbardData.map((item, index) => (
             <div key={index}>
               <ListItemButton onClick={() => handleExpand(index)}>
-                <ListItemText primary={item.name} />
+                <ListItemText primary={item.category_name} />
                 {item.children ? (
                   expanded === index ? (
                     <ExpandLess />
@@ -75,13 +75,13 @@ export const MobileNavbar = () => {
               </ListItemButton>
 
               {/* Collapsible Children Items */}
-              {item.children && (
+              {item.services && (
                 <Collapse in={expanded === index} timeout="auto" unmountOnExit>
                   <List component="div" disablePadding>
-                    {item.children.map((child, childIndex) => (
+                    {item.services.map((child, childIndex) => (
                       <ListItem key={childIndex} sx={{ pl: 4 }}>
                         <ListItemText
-                          primary={child.title ? child.title : child.segment}
+                          primary={child.service_name && child.service_name}
                         />
                       </ListItem>
                     ))}

@@ -5,3 +5,4 @@ export * from "./Auth";
 export * from "./Service";
 export * from "./Policy";
 export * from "./About";
+export * from "./Model";

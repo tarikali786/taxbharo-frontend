@@ -6,8 +6,10 @@ import {
   BlogDetails,
   Blogs,
   FAQs,
+  Message,
   PrivacyAndPolicy,
   Service,
+  ServiceDetails,
   SignIn,
   TermsAndCondition,
   VerifyNumber,
@@ -17,7 +19,6 @@ import {
 import Layout1 from "./Layout/Layout1";
 import AuthLayout from "./Layout/AuthLayout";
 import WithLazyComponet from "./LazyLoading/WithLazyLoading";
-import Test from "./Component/test/test";
 const LazyHome = WithLazyComponet(() => import("./Component/Home/Home"));
 
 function App() {
@@ -25,13 +26,14 @@ function App() {
   return (
     <AnimatePresence>
       <WhatsApp />
+      {/* <Message /> */}
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Layout1 />}>
           <Route index element={<LazyHome />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="/service" element={<Service />} />
-          {/* <Route path="/service/:title" element={<Service />} /> */}
+          <Route path="/service/:seriveURL" element={<ServiceDetails />} />
           <Route path="/privacy-and-policy" element={<PrivacyAndPolicy />} />
           <Route path="/terms-and-conditions" element={<TermsAndCondition />} />
           <Route path="/faq" element={<FAQs />} />
@@ -41,9 +43,6 @@ function App() {
           <Route path="sign-in" element={<SignIn />} />
           <Route path="verify-number" element={<VerifyNumber />} />
           <Route path="verify-otp" element={<VerifyOTP />} />
-        </Route>
-        <Route>
-          <Route path="/text" element={<Test />} />
         </Route>
       </Routes>
     </AnimatePresence>

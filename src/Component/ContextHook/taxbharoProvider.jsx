@@ -1,14 +1,31 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { get } from "../Hook/api";
+import { Loading } from "../Common";
 
 const MyContext = createContext();
 
 // Create a provider component
 export const MyProvider = ({ children }) => {
-  const [disclaimerModel, setDisclaimerModel] = useState(true);
-
+  const [disclaimerModel, setDisclaimerModel] = useState( );
+  const [navbardData, setNavbarData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const FetchNavbarData = async () => {
+    const response = await get("/categories-with-services");
+    setNavbarData(response.data.data);
+    setLoading(false);
+  };
+  useEffect(() => {
+    setLoading(true);
+    FetchNavbarData();
+  }, []);
+  if (loading) {
+    return <Loading />;
+  }
   return (
-    <MyContext.Provider value={{ disclaimerModel, setDisclaimerModel }}>
+    <MyContext.Provider
+      value={{ disclaimerModel, setDisclaimerModel, navbardData }}
+    >
       {children}
     </MyContext.Provider>
   );

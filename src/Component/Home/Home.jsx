@@ -29,7 +29,7 @@ const Home = () => {
         <Insights />
         <Service />
         <Business />
-        <DownloadApp />
+        {/* <DownloadApp /> */}
       </motion.div>
 
       {disclaimerModel && <Disclaimer onClick={CloseDisclaimerModel} />}

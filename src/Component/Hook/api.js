@@ -53,7 +53,7 @@ export const remove = async (url, config) => {
 };
 
 // Handle request error and return consistent error messages
-const handleRequestError = (error) => {
+const handleRequestError = (error) => { 
   if (error.response) {
     if (error.response.status === 401) {
       // window.location.href = "/auth/sing-in";
