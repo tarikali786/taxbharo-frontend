@@ -6,10 +6,11 @@ export const Header = () => {
     <div
       className={`bg-white-500 z-50 justify-between w-full md:px-10 lg:px-16 xl:px-44  px-4 py-3 text-black-500 md:flex hidden  sticky top-0 `}
     >
-      <div className="text-sm flex items-center gap-1  tracking-wide">
+      {/* <div className="text-sm flex items-center gap-1  tracking-wide">
         <LocationOnIcon />
         hyderabad | Delhi | Mumbai | Bangalore
-      </div>
+      </div> */}
+      <p></p>
       <div className="flex items-center gap-4">
         <div className="text-sm flex items-center gap-1 tracking-wide">
           <EmailIcon />

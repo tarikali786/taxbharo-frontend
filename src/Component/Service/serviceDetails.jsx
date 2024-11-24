@@ -103,12 +103,19 @@ export const ServiceDetails = () => {
             />
           </div>
         </div>
-
-        <div className="lg:w-1/2 p-8 w-full shadow-lg rounded-xl bg-blue-100">
-          <h1 className="text-xl font-semibold">
-            Penalty for Late Filing Income Tax Return
-          </h1>
-          <p className="mt-6">{serviceDetails?.attributes?.notes}</p>
+        <div className="flex flex-col md:flex-row justify-between gap-10">
+          <div className="lg:w-1/2 p-8 w-full shadow-lg rounded-xl bg-blue-100">
+            <h1 className="text-xl font-semibold">
+              Penalty for Late Filing Income Tax Return
+            </h1>
+            <p className="mt-6">{serviceDetails?.attributes?.notes}</p>
+          </div>
+          <div className="lg:w-1/2 p-8 w-full shadow-lg rounded-xl bg-blue-100">
+            <h1 className="text-xl font-semibold">Disclaimer</h1>
+            <p className="mt-6">
+              Inclusive of Taxes (GST), Audit Fee Not Included.
+            </p>
+          </div>
         </div>
       </div>
     </div>
