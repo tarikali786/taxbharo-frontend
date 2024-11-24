@@ -12,12 +12,10 @@ import {
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
-import { useTaxbharoContext } from "../ContextHook/taxbharoProvider";
 
 export const MobileNavbar = ({ navbardData }) => {
   const [expanded, setExpanded] = useState(null);
   const [open, setOpen] = useState(false);
-  const { disclaimerModel } = useTaxbharoContext();
 
   const handleExpand = (index) => {
     setExpanded(expanded === index ? null : index);
@@ -34,18 +32,16 @@ export const MobileNavbar = ({ navbardData }) => {
 
   return (
     <div
-      className={` sticky  top-0 w-full   z-50  md:hidden  px-2  py-5 shadow-md flex items-center justify-between gap-2  bg-white-500 ${
-        disclaimerModel && "filter blur-md pointer-events-none "
-      }`}
+      className={` sticky  top-0 w-full   z-50  md:hidden  px-2  py-5 shadow-md flex items-center justify-between gap-2  bg-blue-500 `}
     >
       <Link to="/" className=" w-24 h-auto   ">
         <img
-          src="https://www.taxbharo.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-blue.f73a0aaf.png&w=1920&q=75"
+          src="https://www.taxbharo.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.6272d145.png&w=1920&q=75"
           alt=""
         />
       </Link>
       <div className="md:hidden block" onClick={toggleDrawer(true)}>
-        <MenuIcon className="text-black-500" style={{ fontSize: "32px" }} />
+        <MenuIcon className="text-white-500" style={{ fontSize: "32px" }} />
       </div>
 
       <Drawer

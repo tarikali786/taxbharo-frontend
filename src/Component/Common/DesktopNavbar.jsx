@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 import { memo, useCallback, useState } from "react";
-import { useTaxbharoContext } from "../ContextHook/taxbharoProvider";
-
 export const DesktopNavbar = memo(({ navbardData }) => {
   const [hoverIndex, setHoverIndex] = useState(null);
   const [activeTab, setActivetab] = useState("");
-  const { disclaimerModel } = useTaxbharoContext();
 
   const handleActivetab = useCallback((tab) => {
     setActivetab(tab);
@@ -13,13 +10,11 @@ export const DesktopNavbar = memo(({ navbardData }) => {
 
   return (
     <div
-      className={`sticky hidden top-12 z-50 md:flex flex-wrap w-full md:px-10 lg:px-16 xl:px-44 px-2 py-4 shadow-sm items-center justify-between gap-2 bg-white-500 ${
-        disclaimerModel && "filter blur-md pointer-events-none"
-      }`}
+      className={`sticky hidden top-12 z-50 md:flex flex-wrap w-full md:px-10 lg:px-16 xl:px-44 px-2 py-4 shadow-sm items-center justify-between gap-2 bg-blue-500 `}
     >
       <Link to="/" className="md:w-32 md:h-10 w-28 h-8">
         <img
-          src="https://www.taxbharo.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-blue.f73a0aaf.png&w=1920&q=75"
+          src="https://www.taxbharo.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.6272d145.png&w=1920&q=75"
           alt=""
         />
       </Link>
@@ -32,9 +27,9 @@ export const DesktopNavbar = memo(({ navbardData }) => {
             onClick={() => handleActivetab(item?.category_name)}
           >
             <p
-              className={`cursor-pointer hover:text-blue-500 font-medium text-sm  text-black ${
+              className={`cursor-pointer hover:text-white-500 font-medium text-sm  text-white-500 ${
                 activeTab === item?.category_name &&
-                "text-blue-500 border-b-2 border-blue-500"
+                "text-white-500 border-b-2 border-white-500"
               }`}
             >
               {item?.category_name}
@@ -42,7 +37,7 @@ export const DesktopNavbar = memo(({ navbardData }) => {
 
             {item?.services && hoverIndex === index && (
               <div
-                className="w-[34rem] absolute top-10 left-[-2rem] bg-white-500 shadow-lg rounded-md p-4 z-50 grid md:grid-cols-3 lg:grid-cols-2 navbarChildContainer"
+                className={`w-[30rem] absolute top-10 left-[-12rem] bg-white-500 shadow-lg rounded-md p-4 z-50 grid md:grid-cols-3 lg:grid-cols-2 ItemNavbar${index}`}
                 onMouseLeave={() => setHoverIndex(null)}
               >
                 {item?.services.map((child, childIndex) => (
@@ -59,7 +54,6 @@ export const DesktopNavbar = memo(({ navbardData }) => {
           </div>
         ))}
       </div>
-      Taxshikho
     </div>
   );
 });

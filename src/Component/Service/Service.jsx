@@ -7,11 +7,9 @@ import { FAQ } from "./FAQ";
 import { Hero } from "./Hero";
 import { ServiceCard } from "./ServiceCard";
 import { get } from "../Hook/api";
-import { useTaxbharoContext } from "../ContextHook/taxbharoProvider";
 
 export const Service = () => {
   const [serviceData, setServiceData] = useState([]);
-  const { setDisclaimerModel } = useTaxbharoContext();
   const fetchServicData = async () => {
     try {
       const res = await get("/services?populate=*");
@@ -21,7 +19,6 @@ export const Service = () => {
     }
   };
   useEffect(() => {
-    setDisclaimerModel();
     fetchServicData();
   }, []);
   return (

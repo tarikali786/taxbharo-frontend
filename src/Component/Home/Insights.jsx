@@ -48,7 +48,7 @@ export const Insights = () => {
       </Stack>
 
       <div className="w-full flex items-center justify-center md:mt-14 mt-6">
-        <Button text="Read More" link="/blogs" />
+        <Button text="All Blogs" link="/blogs" />
       </div>
     </div>
   );

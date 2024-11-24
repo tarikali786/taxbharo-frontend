@@ -6,12 +6,10 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import { get } from "../Hook/api";
 import { useParams } from "react-router-dom";
-import { useTaxbharoContext } from "../ContextHook/taxbharoProvider";
 
 export const ServiceDetails = () => {
   const { seriveURL } = useParams();
   const [serviceDetails, setServiceDetails] = useState(null);
-  const { setDisclaimerModel } = useTaxbharoContext();
 
   const fetchServiceDetails = async () => {
     const response = await get(`/services/${seriveURL}?populate=*`);
@@ -20,7 +18,6 @@ export const ServiceDetails = () => {
 
   useEffect(() => {
     fetchServiceDetails();
-    setDisclaimerModel(false);
   }, [seriveURL]);
 
   const formattedSteps = useMemo(() => {

@@ -5,6 +5,7 @@ import {
   AboutUs,
   BlogDetails,
   Blogs,
+  Calendar,
   FAQs,
   Message,
   PrivacyAndPolicy,
@@ -45,6 +46,7 @@ function App() {
           <Route path="verify-otp" element={<VerifyOTP />} />
         </Route>
       </Routes>
+      <Calendar />
     </AnimatePresence>
   );
 }

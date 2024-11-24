@@ -7,7 +7,6 @@ const MyContext = createContext();
 
 // Create a provider component
 export const MyProvider = ({ children }) => {
-  const [disclaimerModel, setDisclaimerModel] = useState( );
   const [navbardData, setNavbarData] = useState([]);
   const [loading, setLoading] = useState(false);
   const FetchNavbarData = async () => {
@@ -23,11 +22,7 @@ export const MyProvider = ({ children }) => {
     return <Loading />;
   }
   return (
-    <MyContext.Provider
-      value={{ disclaimerModel, setDisclaimerModel, navbardData }}
-    >
-      {children}
-    </MyContext.Provider>
+    <MyContext.Provider value={{ navbardData }}>{children}</MyContext.Provider>
   );
 };
 

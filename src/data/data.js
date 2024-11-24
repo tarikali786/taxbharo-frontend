@@ -422,7 +422,7 @@ export const BusinessData = [
   },
   {
     value: "85",
-    title: "Salaried Employe",
+    title: "Salaried Employee",
     description: "Are not aware of tax savings schemes",
   },
   {
