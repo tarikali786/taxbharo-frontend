@@ -14,15 +14,19 @@ export const InsightsCard = memo(({ item, index }) => {
         {isLoading && <SkeletonLoading />}
         <img
           className="w-full h-full object-fill rounded-md"
-          src={item?.img}
+          src={`${import.meta.env.VITE_IMAGE_URL}${
+            item?.attributes?.image?.data?.attributes?.url
+          }`}
           alt="Service"
           onLoad={() => setIsLoading(false)}
         />
       </div>
       <div className="mt-2 ">
-        <span className="font-normal text-sm ">{item?.title}</span>
-        <h3 className="font-bold text-md my-2">{item?.heading}</h3>
-        <p>{item?.description}</p>
+        <h3 className="font-bold text-md my-2">{item?.attributes?.title}</h3>
+        <div
+          className=" line-clamp-3"
+          dangerouslySetInnerHTML={{ __html: item?.attributes?.description }}
+        />
       </div>
     </Link>
   );

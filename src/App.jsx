@@ -32,7 +32,7 @@ function App() {
         <Route path="/" element={<Layout1 />}>
           <Route index element={<LazyHome />} />
           <Route path="/blogs" element={<Blogs />} />
-          <Route path="/blog/:id" element={<BlogDetails />} />
+          <Route path="/blog/:url" element={<BlogDetails />} />
           <Route path="/service" element={<Service />} />
           <Route path="/service/:seriveURL" element={<ServiceDetails />} />
           <Route path="/privacy-and-policy" element={<PrivacyAndPolicy />} />

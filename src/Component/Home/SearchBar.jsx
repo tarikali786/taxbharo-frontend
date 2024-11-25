@@ -1,4 +1,3 @@
-import { Button } from "../Common/Button";
 import { useEffect, useState } from "react";
 import { get } from "../Hook/api";
 import { Link } from "react-router-dom";
@@ -78,9 +77,8 @@ export const SearchBar = () => {
         onChange={(e) => setSearchTitle(e.target.value)}
         onClick={handleInputClick}
       />
-      {/* <Button text="Search" onClick={() => {}} /> */}
       {isDropdownVisible && (
-        <div className="absolute top-[66px] left-0 w-full rounded-lg shadow-lg bg-white p-4 z-50 bg-white-500">
+        <div className="absolute top-[66px] left-0 w-full rounded-lg shadow-lg bg-white p-4 z-50 bg-white-500 max-h-[28vh] md:max-h-[36vh] overflow-y-auto">
           {serviceData.length !== 0 && (
             <div>
               <p className="font-semibold text-black-500 mb-1">Services</p>

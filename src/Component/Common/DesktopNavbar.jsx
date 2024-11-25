@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { memo, useCallback, useState } from "react";
+import { useTaxbharoContext } from "../ContextHook/taxbharoProvider";
 export const DesktopNavbar = memo(({ navbardData }) => {
   const [hoverIndex, setHoverIndex] = useState(null);
   const [activeTab, setActivetab] = useState("");
@@ -18,7 +19,7 @@ export const DesktopNavbar = memo(({ navbardData }) => {
           alt=""
         />
       </Link>
-      <div className="xl:gap-6 lg:gap-4 md:gap-2 hidden md:flex relative">
+      <div className="xl:gap-6 lg:gap-4 md:gap-2 hidden md:flex ">
         {navbardData?.map((item, index) => (
           <div
             key={index}
@@ -27,9 +28,9 @@ export const DesktopNavbar = memo(({ navbardData }) => {
             onClick={() => handleActivetab(item?.category_name)}
           >
             <p
-              className={`cursor-pointer hover:text-white-500 font-medium text-sm  text-white-500 ${
+              className={`cursor-pointer hover:text-blue-600 font-medium text-sm  text-white-500 ${
                 activeTab === item?.category_name &&
-                "text-white-500 border-b-2 border-white-500"
+                "text-blue-600 border-b-2 border-blue-600 pb-1"
               }`}
             >
               {item?.category_name}
@@ -37,14 +38,14 @@ export const DesktopNavbar = memo(({ navbardData }) => {
 
             {item?.services && hoverIndex === index && (
               <div
-                className={`w-[30rem] absolute top-10 left-[-12rem] bg-white-500 shadow-lg rounded-md p-4 z-50 grid md:grid-cols-3 lg:grid-cols-2 ItemNavbar${index}`}
+                className={`w-full fixed top-28 left-0 bg-white-500 shadow-lg rounded-md p-4 z-50 grid md:grid-cols-2 lg:grid-cols-4 ItemNavbar${index}`}
                 onMouseLeave={() => setHoverIndex(null)}
               >
                 {item?.services.map((child, childIndex) => (
                   <Link
                     to={`/service/${child.pageUrl}`}
                     key={childIndex}
-                    className="text-sm py-1 px-2 hover:bg-blue-100 rounded-md cursor-pointer"
+                    className="text-sm py-1 px-2 hover:bg-blue-100 rounded-md cursor-pointer "
                   >
                     {child.service_name}
                   </Link>

@@ -1,4 +1,4 @@
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+// import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
 import CallIcon from "@mui/icons-material/Call";
 export const Header = () => {
@@ -18,7 +18,7 @@ export const Header = () => {
         </div>
         <div className="text-sm flex items-center gap-1 tracking-wide">
           <CallIcon />
-          +100020002000
+          +91 7286058270
         </div>
       </div>
     </div>

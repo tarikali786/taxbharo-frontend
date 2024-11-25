@@ -6,10 +6,12 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import { get } from "../Hook/api";
 import { useParams } from "react-router-dom";
+import { SkeletonLoading } from "../Common/Skeleton";
 
 export const ServiceDetails = () => {
   const { seriveURL } = useParams();
   const [serviceDetails, setServiceDetails] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchServiceDetails = async () => {
     const response = await get(`/services/${seriveURL}?populate=*`);
@@ -49,7 +51,14 @@ export const ServiceDetails = () => {
 
       <div className="grid md:grid-cols-2 lg:gap-x-16 xl:gap-x-32 gap-6">
         <div className="rounded-xl overflow-hidden w-full h-[26vh] lg:h-[42vh] shadow-lg">
-          <img src={Img1} alt="" className="object-fill w-full h-full" />
+          {isLoading && <SkeletonLoading />}
+
+          <img
+          
+            alt=""
+            className="object-fill w-full h-full"
+            onLoad={() => setIsLoading(false)}
+          />
         </div>
         <div className="p-4 shadow-lg rounded-xl bg-blue-100">
           <h1 className="text-xl font-semibold">Documents Required</h1>
