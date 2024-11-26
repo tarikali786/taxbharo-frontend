@@ -5,7 +5,7 @@ import { DownloadApp } from "../Home/DownloadApp";
 import { InsightsCard } from "../Home/InsightsCard";
 import { FAQ } from "./FAQ";
 import { Hero } from "./Hero";
-import { ServiceCard } from "./ServiceCard";
+import { ServiceCard } from "./Servicecard";
 import { get } from "../Hook/api";
 
 export const Service = () => {

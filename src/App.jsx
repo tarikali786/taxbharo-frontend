@@ -40,6 +40,9 @@ function App() {
           <Route path="/faq" element={<FAQs />} />
           <Route path="/about-us" element={<AboutUs />} />
         </Route>
+
+
+        
         <Route path="/auth" element={<AuthLayout />}>
           <Route path="sign-in" element={<SignIn />} />
           <Route path="verify-number" element={<VerifyNumber />} />
