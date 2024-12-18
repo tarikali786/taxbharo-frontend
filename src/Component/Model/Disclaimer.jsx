@@ -17,7 +17,7 @@ export const Disclaimer = memo(({ open, setOpen }) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[98%] md:w-3/4 h-[85vh] md:h-[75vh] overflow-y-auto bg-white-500 shadow-md border-none  px-8 py-4 rounded-lg">
+        <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[98%] md:w-3/4 h-[85vh] max-h-max md:h-[75vh] overflow-y-auto bg-white-500 shadow-md border-none  px-8 py-4 rounded-lg">
           <div className=" ">
             <div className="relative">
               <h1 className="text-2xl font-bold text-center text-black mb-8">

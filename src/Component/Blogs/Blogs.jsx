@@ -51,7 +51,7 @@ export const Blogs = () => {
   };
 
   return (
-    <div className="w-full md:my-8 md:px-10 lg:px-16 xl:px-44 px-2 py-4">
+    <div className="w-full md:my-8 md:px-10 lg:px-16 xl:px-44 px-6 py-4">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {insights?.map((item, index) => (
           <InsightsCard key={index} item={item} index={index} />

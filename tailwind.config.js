@@ -32,6 +32,9 @@ export default {
         300: "#333333cc",
         100: "#dadada",
       },
+      yellow:{
+        500:"#facf24",
+      }
     },
   },
   plugins: [],

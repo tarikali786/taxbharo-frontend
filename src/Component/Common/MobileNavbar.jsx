@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-import { NavbarData } from "../../data/data";
+// import { NavbarData } from "../../data/data";
 import {
   Drawer,
   List,
@@ -32,7 +32,7 @@ export const MobileNavbar = ({ navbardData }) => {
 
   return (
     <div
-      className={` sticky  top-0 w-full   z-50  md:hidden  px-2  py-5 shadow-md flex items-center justify-between gap-2  bg-blue-500 `}
+      className={` sticky  top-0 w-full   z-50  md:hidden  px-6  py-5 shadow-md flex items-center justify-between gap-2  bg-blue-500 `}
     >
       <Link to="/" className=" w-24 h-auto   ">
         <img
@@ -86,12 +86,12 @@ export const MobileNavbar = ({ navbardData }) => {
               )}
             </div>
           ))}
-          <Link
+          {/* <Link
             to="/auth/sign-in"
             className="absolute bottom-1 left-0 w-full bg-blue-500 text-center py-4 rounded-3xl font-semibold text-white-500 text-xl transform transition-transform animate-bounce"
           >
             Login
-          </Link>
+          </Link> */}
         </List>
       </Drawer>
     </div>

@@ -24,7 +24,7 @@ export const Calendar = () => {
     <>
       <div
         className=" fixed bottom-6 left-6   rounded-full z-50 
-    shadow-sm bg-blue-500 size-14 flex items-center justify-center  cursor-pointer
+    shadow-sm bg-yellow-500 size-14 flex items-center justify-center  cursor-pointer
     "
         onClick={handleOpen}
       >

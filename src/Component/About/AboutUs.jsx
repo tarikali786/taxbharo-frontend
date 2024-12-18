@@ -3,13 +3,14 @@ import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { FAQ } from "./FAQ";
 
 export const AboutUs = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   });
   return (
-    <div className="w-full md:px-10 lg:px-16 xl:px-44 pb-10  px-2">
+    <div className="w-full md:px-10 lg:px-16 xl:px-44 pb-10  px-6">
       <div className="mt-10">
         <h1 className="text-center md:text-3xl text-2xl text-blue-500  font-bold  mb-4  ">
           About Us
@@ -85,7 +86,10 @@ export const AboutUs = () => {
               className="w-full h-80"
             ></iframe>
           </div>
+
         </div>
+        <FAQ />
+
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { Footer, Header, Navbar } from "../Component";
 const Layout1 = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Navbar />
       <Outlet />
       <Footer />

@@ -18,6 +18,8 @@ export const ServiceDetails = () => {
     setServiceDetails(response?.data?.data);
   };
 
+  console.log(serviceDetails);
+
   useEffect(() => {
     fetchServiceDetails();
   }, [seriveURL]);
@@ -38,7 +40,7 @@ export const ServiceDetails = () => {
   }, [serviceDetails]);
 
   return (
-    <div className="grid gap-y-10 md:gap-y-14 w-full md:px-10 lg:px-16 xl:px-44 md:py-16  px-2 py-10 ">
+    <div className="grid gap-y-10 md:gap-y-14 w-full md:px-10 lg:px-16 xl:px-44 md:py-16  px-6 py-10 ">
       <div>
         <h1 className=" text-center text-2xl font-medium text-blue-500 ">
           {serviceDetails?.attributes?.service_name}
@@ -54,8 +56,10 @@ export const ServiceDetails = () => {
           {isLoading && <SkeletonLoading />}
 
           <img
-          
             alt=""
+            src={`${import.meta.env.VITE_IMAGE_URL}${
+              serviceDetails?.attributes?.photo?.data?.attributes?.url
+            }`}
             className="object-fill w-full h-full"
             onLoad={() => setIsLoading(false)}
           />
@@ -101,7 +105,7 @@ export const ServiceDetails = () => {
               </Step>
             ))}
           </Stepper>
-          <div className="mt-6">
+          <div className="mt-6 flex gap-10">
             <Button
               text={
                 serviceDetails?.attributes?.Button_name
@@ -109,6 +113,13 @@ export const ServiceDetails = () => {
                   : "Start Process"
               }
               link={serviceDetails?.attributes?.Button_Url}
+            />
+            <Button
+              text={`₹ ${
+                serviceDetails?.attributes?.price
+                  ? serviceDetails.attributes.price
+                  : "0"
+              }`}
             />
           </div>
         </div>
@@ -122,7 +133,8 @@ export const ServiceDetails = () => {
           <div className="lg:w-1/2 p-8 w-full shadow-lg rounded-xl bg-blue-100">
             <h1 className="text-xl font-semibold">Disclaimer</h1>
             <p className="mt-6">
-              Inclusive of Taxes (GST), Audit Fee Not Included.
+              All the services listed are inclusive of taxes (GST), but the
+              audit fee is not included.
             </p>
           </div>
         </div>

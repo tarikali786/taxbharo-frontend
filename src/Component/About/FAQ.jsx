@@ -4,14 +4,14 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useEffect } from "react";
 
-export const FAQs = () => {
+export const FAQ = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   });
   return (
-    <div className="md:my-10  w-full md:px-10 lg:px-16 xl:px-44 px-6  ">
-      <h1 className="text-center md:text-3xl text-2xl text-blue-500  font-semibold  mb-4 underline ">
-        Frequently Asked Questions
+    <div className="md:my-32  my-20 w-full">
+      <h1 className="text-center text-2xl md:text-3xl font-semibold text-blue-500  ">
+        Personal Income Tax Filing FAQ’s
       </h1>
       <Accordion defaultExpanded className="md:mt-20 mt-10">
         <AccordionSummary

@@ -12,8 +12,8 @@ export const Service = () => {
   const [serviceData, setServiceData] = useState([]);
   const fetchServicData = async () => {
     try {
-      const res = await get("/services?populate=*");
-      console.log(res?.data?.data);
+      const res = await get("/blogs?populate=*");
+      setServiceData(res?.data?.data);
     } catch (error) {
       console.log(error);
     }
@@ -22,12 +22,12 @@ export const Service = () => {
     fetchServicData();
   }, []);
   return (
-    <div className="w-full md:px-10 lg:px-16 xl:px-44 md:py-16  px-2 py-10">
+    <div className="w-full md:px-10 lg:px-16 xl:px-44 md:py-16  px-6 py-10">
       <Hero />
       <ServiceCard />
       <FAQ />
       <div className="grid lg:grid-cols-4 md:grid-cols-3 gap-4 ">
-        {RelatedBlog?.map((item, index) => (
+        {serviceData?.map((item, index) => (
           <InsightsCard key={index} item={item} />
         ))}
       </div>
