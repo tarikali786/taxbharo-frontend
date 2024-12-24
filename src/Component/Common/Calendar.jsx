@@ -23,7 +23,7 @@ export const Calendar = () => {
   return (
     <>
       <div
-        className=" fixed bottom-6 left-6   rounded-full z-50 
+        className=" fixed bottom-6 left-6   rounded-full z-50  transform transition-transform animate-bounce
     shadow-sm bg-yellow-500 size-14 flex items-center justify-center  cursor-pointer
     "
         onClick={handleOpen}

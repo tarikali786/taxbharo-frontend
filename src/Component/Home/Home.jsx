@@ -7,6 +7,7 @@ import { SearchBar } from "./SearchBar";
 import { Service } from "./Service";
 import { motion } from "framer-motion";
 import { Disclaimer } from "../Model/Disclaimer";
+import { SSLLogo } from "./SSL-logo";
 
 const Home = () => {
   const [open, setOpen] = useState(true);
@@ -46,6 +47,7 @@ const Home = () => {
         <Insights />
         <Service />
         <Business />
+        <SSLLogo />
         {/* <DownloadApp /> */}
       </motion.div>
 

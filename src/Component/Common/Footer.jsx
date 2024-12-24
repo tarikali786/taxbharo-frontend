@@ -43,7 +43,7 @@ export const Footer = () => {
       )}
       <div className="w-full md:px-10 lg:px-16    px-4 py-12 bg-blue-500  ">
         <div
-          className={` flex justify-center md:justify-between gap-2 md:items-center   sm:flex-row  `}
+          className={` flex justify-center md:justify-between gap-2 md:items-center   sm:flex-row flex-wrap  `}
         >
           <Link to="about-us" className=" w-44 md:h-14  ">
             <img
@@ -52,10 +52,10 @@ export const Footer = () => {
             />
           </Link>
 
-          <div className="flex justify-between  text-white-500 mt-10 gap-y-4 gap-x-8">
-            <div className="flex flex-col gap-2">
+          <div className="flex justify-between flex-wrap text-white-500 mt-10 gap-y-4 gap-x-8">
+            <div className="flex flex-col gap-3">
               <Link to={"https://indiankanoon.org/doc/789969/"} target="_blank">
-                IT Act
+                Income Tax Act
               </Link>
               <Link
                 to={"https://cbic-gst.gov.in/gst-acts.html"}
@@ -80,7 +80,7 @@ export const Footer = () => {
               </Link>
             </div>
             {/* 2 */}
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-3">
               <Link
                 to={
                   "https://www1.incometaxindiaefiling.gov.in/e-FilingGS/Services/LinkAadhaarHome.html?lang=eng"
@@ -122,7 +122,7 @@ export const Footer = () => {
                 House Rent Allowance Calculator{" "}
               </Link>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-3">
               {/* 3 */}
               <Link
                 to={

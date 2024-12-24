@@ -39,7 +39,7 @@ export const DesktopNavbar = memo(({ navbardData }) => {
 
               {item?.services && hoverIndex === index && (
                 <div
-                  className={`w-full fixed top-[72px] left-0 bg-white-500 shadow-lg rounded-md p-4 z-50 grid md:grid-cols-2 lg:grid-cols-4 ItemNavbar${index}`}
+                  className={`w-full fixed top-[72px] left-0 bg-white-500 shadow-lg gap-y-3 rounded-md p-4 z-50 grid md:grid-cols-2 lg:grid-cols-4 ItemNavbar${index}`}
                   onMouseLeave={() => setHoverIndex(null)}
                 >
                   {item?.services.map((child, childIndex) => (
