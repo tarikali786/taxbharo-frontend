@@ -18,10 +18,13 @@
 .css-3hpdci-MuiSvgIcon-root-MuiStepIcon-root {
   color: var(--brand-color) !important;
 }
-.shadowBox {
-  /* box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1); */
-  box-shadow: 0 0px 15px -3px rgb(126, 14, 14), 0 4px 6px -4px rgba(211, 29, 29, 0.759) !important;
-}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

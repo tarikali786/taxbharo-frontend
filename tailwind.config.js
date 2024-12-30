@@ -34,6 +34,8 @@ export default {
       },
       yellow:{
         500:"#facf24",
+        400:"#e22bca", //pink
+        300:"#be225c" //red
       }
     },
   },

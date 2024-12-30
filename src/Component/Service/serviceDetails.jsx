@@ -5,8 +5,9 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import { get } from "../Hook/api";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { SkeletonLoading } from "../Common/Skeleton";
+import { FAQ } from "../About/FAQ";
 
 export const ServiceDetails = () => {
   const { seriveURL } = useParams();
@@ -88,18 +89,15 @@ export const ServiceDetails = () => {
               <Step key={index}>
                 <StepLabel>
                   <p className="text-black-400 text-sm">{label.text}</p>
-                  <a
-                    className="hidden md:block text-black-300 text-sm sm:w-1/2 md:w-full"
-                    href={label.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {label.link}
-                  </a>
+
                   {label.link && (
-                    <div className="md:hidden block mt-2">
-                      <Button text="Click" link={label.link} />
-                    </div>
+                    <Link
+                      to={label.link}
+                      target="_blank"
+                      className=" block mt-2 bg-blue-500 max-w-min px-4 py-1 text-white-500 rounded-xl "
+                    >
+                      Click
+                    </Link>
                   )}
                 </StepLabel>
               </Step>
@@ -139,6 +137,8 @@ export const ServiceDetails = () => {
           </div>
         </div>
       </div>
+
+      <FAQ />
     </div>
   );
 };

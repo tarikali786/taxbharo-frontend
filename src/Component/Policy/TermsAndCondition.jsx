@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { get } from "../Hook/api";
 
 export const TermsAndCondition = () => {
   const [policyContent, setPolicyContent] = useState("");
@@ -8,11 +9,8 @@ export const TermsAndCondition = () => {
   useEffect(() => {
     const fetchPrivacyPolicy = async () => {
       try {
-        const response = await fetch(
-          "https://jsonplaceholder.typicode.com/posts/1"
-        );
-        const data = await response.json();
-        setPolicyContent(data.body);
+        const response = await get("/terms-and-conditions");
+        setPolicyContent(response?.data?.data);
       } catch (error) {
         console.error("Error fetching privacy policy:", error);
       }
@@ -28,7 +26,9 @@ export const TermsAndCondition = () => {
       </h1>
       <div
         className="text-lg mt-10 text-black-400"
-        dangerouslySetInnerHTML={{ __html: policyContent }}
+        dangerouslySetInnerHTML={{
+          __html: policyContent[0]?.attributes?.details,
+        }}
       ></div>
     </div>
   );

@@ -7,7 +7,6 @@ import {
   Blogs,
   Calendar,
   FAQs,
-  Message,
   PrivacyAndPolicy,
   Service,
   ServiceDetails,
@@ -20,6 +19,8 @@ import {
 import Layout1 from "./Layout/Layout1";
 import AuthLayout from "./Layout/AuthLayout";
 import WithLazyComponet from "./LazyLoading/WithLazyLoading";
+import { ErrorPage } from "./ErrorBoundary";
+import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
 const LazyHome = WithLazyComponet(() => import("./Component/Home/Home"));
 
 function App() {
@@ -28,26 +29,33 @@ function App() {
     <AnimatePresence>
       <WhatsApp />
       {/* <Message /> */}
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Layout1 />}>
-          <Route index element={<LazyHome />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/blog/:url" element={<BlogDetails />} />
-          <Route path="/service" element={<Service />} />
-          <Route path="/service/:seriveURL" element={<ServiceDetails />} />
-          <Route path="/privacy-and-policy" element={<PrivacyAndPolicy />} />
-          <Route path="/terms-and-conditions" element={<TermsAndCondition />} />
-          <Route path="/faq" element={<FAQs />} />
+      <ErrorBoundary>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Layout1 />}>
+            <Route index element={<LazyHome />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blog/:url" element={<BlogDetails />} />
+            <Route path="/service" element={<Service />} />
+            <Route path="/service/:seriveURL" element={<ServiceDetails />} />
+            <Route path="/privacy-and-policy" element={<PrivacyAndPolicy />} />
+            <Route
+              path="/terms-and-conditions"
+              element={<TermsAndCondition />}
+            />
+            <Route path="/faq" element={<FAQs />} />
+            <Route path="/about-us" element={<AboutUs />} />
+          </Route>
 
-          <Route path="/about-us" element={<AboutUs />} />
-        </Route>
+          <Route path="/auth" element={<AuthLayout />}>
+            <Route path="sign-in" element={<SignIn />} />
+            <Route path="verify-number" element={<VerifyNumber />} />
+            <Route path="verify-otp" element={<VerifyOTP />} />
+          </Route>
 
-        <Route path="/auth" element={<AuthLayout />}>
-          <Route path="sign-in" element={<SignIn />} />
-          <Route path="verify-number" element={<VerifyNumber />} />
-          <Route path="verify-otp" element={<VerifyOTP />} />
-        </Route>
-      </Routes>
+          <Route path="*" element={<ErrorPage />} />
+          <Route path="/error" element={<ErrorPage />} />
+        </Routes>
+      </ErrorBoundary>
       <Calendar />
     </AnimatePresence>
   );

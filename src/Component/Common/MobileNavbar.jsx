@@ -12,6 +12,7 @@ import {
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
+import Logo from "../../assets/logo.webp";
 
 export const MobileNavbar = ({ navbardData }) => {
   const [expanded, setExpanded] = useState(null);
@@ -35,10 +36,7 @@ export const MobileNavbar = ({ navbardData }) => {
       className={` sticky  top-0 w-full   z-50  md:hidden  px-6  py-5 shadow-md flex items-center justify-between gap-2  bg-blue-500 `}
     >
       <Link to="/" className=" w-24 h-auto   ">
-        <img
-          src="https://www.taxbharo.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.6272d145.png&w=1920&q=75"
-          alt=""
-        />
+        <img src={Logo} alt="" />
       </Link>
       <div className="md:hidden block" onClick={toggleDrawer(true)}>
         <MenuIcon className="text-white-500" style={{ fontSize: "32px" }} />
@@ -86,6 +84,12 @@ export const MobileNavbar = ({ navbardData }) => {
               )}
             </div>
           ))}
+          <div className="pl-4">
+            <Link to="/blogs" className="text-lg font-semibold">
+              TaxSikho
+            </Link>
+          </div>
+
           {/* <Link
             to="/auth/sign-in"
             className="absolute bottom-1 left-0 w-full bg-blue-500 text-center py-4 rounded-3xl font-semibold text-white-500 text-xl transform transition-transform animate-bounce"

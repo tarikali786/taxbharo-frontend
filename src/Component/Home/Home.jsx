@@ -8,6 +8,7 @@ import { Service } from "./Service";
 import { motion } from "framer-motion";
 import { Disclaimer } from "../Model/Disclaimer";
 import { SSLLogo } from "./SSL-logo";
+import { GoogleReview } from "../Google Review";
 
 const Home = () => {
   const [open, setOpen] = useState(true);
@@ -49,6 +50,7 @@ const Home = () => {
         <Business />
         <SSLLogo />
         {/* <DownloadApp /> */}
+        <GoogleReview />
       </motion.div>
 
       {open && <Disclaimer open={open} setOpen={setOpen} />}

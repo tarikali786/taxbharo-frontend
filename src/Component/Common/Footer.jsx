@@ -6,7 +6,9 @@ import GoogleIcon from "@mui/icons-material/Google";
 import { useCallback, useState } from "react";
 import { post } from "../Hook/api";
 import { Message } from "../Model";
-
+import Logo from "../../assets/logo.webp";
+import SSL1 from "../../assets/SSl1.png";
+import SSL2 from "../../assets/SSL2.png";
 export const Footer = () => {
   const [email, setEmail] = useState("");
   const [openModel, setOpenModel] = useState(false);
@@ -45,15 +47,22 @@ export const Footer = () => {
         <div
           className={` flex justify-center md:justify-between gap-2 md:items-center   sm:flex-row flex-wrap  `}
         >
-          <Link to="about-us" className=" w-44 md:h-14  ">
-            <img
-              src="https://www.taxbharo.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.6272d145.png&w=1920&q=75"
-              alt=""
-            />
-          </Link>
+          <div className=" w-44  flex flex-col gap-2">
+            <Link to="about-us" className=" w-44 md:h-14  ">
+              <img src={Logo} alt="" />
+            </Link>
 
-          <div className="flex justify-between flex-wrap text-white-500 mt-10 gap-y-4 gap-x-8">
-            <div className="flex flex-col gap-3">
+            <div className="grid grid-cols-2 gap-2 items-center justify-center ">
+              <div>
+                <img src={SSL1} alt="" />
+              </div>
+              <div>
+                <img src={SSL2} alt="" />
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-between items-center flex-wrap text-white-500 mt-10 gap-y-4 gap-x-8">
+            <div className="flex flex-col gap-3 justify-center  ">
               <Link to={"https://indiankanoon.org/doc/789969/"} target="_blank">
                 Income Tax Act
               </Link>
