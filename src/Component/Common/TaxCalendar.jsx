@@ -75,6 +75,7 @@ const CustomEventCalendar = () => {
         "loading event data..."
       ) : (
         <>
+        <h1 className="text-center  text-lg text-blue-500 mb-4 font-semibold ">Compliance Calendar</h1>
           <Calendar
             onClickDay={handleDateClick}
             tileClassName={tileClassName}

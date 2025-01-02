@@ -25,7 +25,6 @@ export const BlogDetails = memo(() => {
   }, []);
 
   console.log(blogDetail);
-  
 
   return (
     <div className="w-full md:my-8 md:px-10 lg:px-16 xl:px-44 px-6 py-4 flex justify-between gap-y-10 md:gap-6 md:flex-row flex-col">
@@ -44,7 +43,7 @@ export const BlogDetails = memo(() => {
             />
           )}
         </div>
-        <h1 className="text-xl md:text-3xl font-bold text-blue-500 my-6">
+        <h1 className="text-xl md:text-3xl font-semibold text-blue-500 my-6 hover:scale-x-50">
           {blogDetail?.attributes?.title}
         </h1>
 
@@ -61,7 +60,7 @@ export const BlogDetails = memo(() => {
             blogDetail.attributes.services.data.map((item, index) => (
               <Link
                 to={item?.attributes?.pageUrl || "#"}
-                className="border rounded-lg py-2 px-3"
+                className="border rounded-lg py-2 px-3 hover:border-blue-500 hover:border-2 hover:bg-blue-100"
                 key={index}
               >
                 <h3 className="text-[16px] font-semibold text-blue-500">

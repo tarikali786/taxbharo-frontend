@@ -1,4 +1,6 @@
 import SSLImage from "../../assets/SSlLogo.jfif";
+import SSL2 from "../../assets/SSL2.png";
+
 export const SSLLogo = () => {
   return (
     <div className="flex justify-between items-center md:flex-row flex-col ">
@@ -16,7 +18,7 @@ export const SSLLogo = () => {
         </i>
       </div>
       <div className="">
-        <img src={SSLImage} alt="ssl-logo" loading="lazy" />
+        <img src={SSL2} alt="ssl-logo" loading="lazy" />
       </div>
     </div>
   );

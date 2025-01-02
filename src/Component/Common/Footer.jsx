@@ -7,7 +7,8 @@ import { useCallback, useState } from "react";
 import { post } from "../Hook/api";
 import { Message } from "../Model";
 import Logo from "../../assets/logo.webp";
-import SSL1 from "../../assets/SSl1.png";
+import Flag from "../../assets/IndiaFlag.png";
+import XIcon from '@mui/icons-material/X';
 import SSL2 from "../../assets/SSL2.png";
 export const Footer = () => {
   const [email, setEmail] = useState("");
@@ -52,9 +53,9 @@ export const Footer = () => {
               <img src={Logo} alt="" />
             </Link>
 
-            <div className="grid grid-cols-2 gap-2 items-center justify-center ">
+            <div className="grid grid-cols-2 gap-2 items-center justify-end  ">
               <div>
-                <img src={SSL1} alt="" />
+                <img src={Flag} alt="" />
               </div>
               <div>
                 <img src={SSL2} alt="" />
@@ -197,6 +198,13 @@ export const Footer = () => {
                   className="bg-white-500  p-2 rounded-md shadow-1 ml-6"
                 >
                   <GoogleIcon size={25} className="text-blue-500" />
+                </Link>
+                <Link
+                  href="https://x.com/bharotax"
+                  target="_blank"
+                  className="bg-white-500  p-2 rounded-md shadow-1 ml-6"
+                >
+                  <XIcon size={25} className="text-blue-500" />
                 </Link>
               </div>
             </div>

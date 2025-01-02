@@ -44,7 +44,7 @@ export const DesktopNavbar = memo(({ navbardData }) => {
                     <Link
                       to={`/service/${child.pageUrl}`}
                       key={childIndex}
-                      className="text-sm py-1 px-2 hover:bg-blue-100 rounded-md cursor-pointer "
+                      className="text-sm py-1 px-2 hover:bg-blue-500 hover:text-white-500 rounded-md cursor-pointer "
                     >
                       {child.service_name}
                     </Link>

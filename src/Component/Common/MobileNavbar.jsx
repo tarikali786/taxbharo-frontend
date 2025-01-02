@@ -48,14 +48,14 @@ export const MobileNavbar = ({ navbardData }) => {
         onClose={toggleDrawer(false)}
         className="md:hidden"
       >
-        <List style={{ width: 250, height: "100vh" }} className="relative">
-          <div className="md:w-32 md:h-10 w-28 h-8 ml-4 mb-4">
+        <List style={{ width: 250, height: "100vh" }} className="relative  ">
+          <div className="md:w-32 md:h-10 w-44 h-12 ml-4 mb-4 ">
             <img
               src="https://www.taxbharo.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-blue.f73a0aaf.png&w=1920&q=75"
               alt="Logo"
             />
           </div>
-          {navbardData.map((item, index) => (
+          {navbardData?.map((item, index) => (
             <div key={index}>
               <ListItemButton onClick={() => handleExpand(index)}>
                 <ListItemText primary={item.category_name} />
@@ -75,6 +75,7 @@ export const MobileNavbar = ({ navbardData }) => {
                     {item.services.map((child, childIndex) => (
                       <ListItem key={childIndex} sx={{ pl: 4 }}>
                         <ListItemText
+                          className="hover:bg-blue-500 hover:text-white-500"
                           primary={child.service_name && child.service_name}
                         />
                       </ListItem>
@@ -84,8 +85,8 @@ export const MobileNavbar = ({ navbardData }) => {
               )}
             </div>
           ))}
-          <div className="pl-4">
-            <Link to="/blogs" className="text-lg font-semibold">
+          <div className="ml-4 mt-5 ">
+            <Link to="/blogs" className="text-[30px]  text-blue-500  ">
               TaxSikho
             </Link>
           </div>
