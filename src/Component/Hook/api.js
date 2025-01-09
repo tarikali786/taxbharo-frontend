@@ -11,7 +11,7 @@ const axiosInstance = axios.create({
 
 // Function to make a GET request
 export const get = async (url, config) => {
-  try {
+  try { 
     const response = await axiosInstance.get(url, config || null);
 
     if (response.status == 200) {

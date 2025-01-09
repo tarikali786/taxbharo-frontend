@@ -11,10 +11,11 @@ import {
 } from "@mui/material";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import { useState } from "react";
+import { memo, useState } from "react";
 import Logo from "../../assets/logo.webp";
+import BlueLogo from "../../assets/BlueLogo.webp";
 
-export const MobileNavbar = ({ navbardData }) => {
+export const MobileNavbar = memo(({ navbardData }) => {
   const [expanded, setExpanded] = useState(null);
   const [open, setOpen] = useState(false);
 
@@ -48,18 +49,15 @@ export const MobileNavbar = ({ navbardData }) => {
         onClose={toggleDrawer(false)}
         className="md:hidden"
       >
-        <List style={{ width: 250, height: "100vh" }} className="relative  ">
+        <List style={{ width: 280, height: "100vh" }} className="relative  ">
           <div className="md:w-32 md:h-10 w-44 h-12 ml-4 mb-4 ">
-            <img
-              src="https://www.taxbharo.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-blue.f73a0aaf.png&w=1920&q=75"
-              alt="Logo"
-            />
+            <img src={BlueLogo} alt="Logo" />
           </div>
           {navbardData?.map((item, index) => (
             <div key={index}>
               <ListItemButton onClick={() => handleExpand(index)}>
                 <ListItemText primary={item.category_name} />
-                {item.children ? (
+                {item.services ? (
                   expanded === index ? (
                     <ExpandLess />
                   ) : (
@@ -72,12 +70,14 @@ export const MobileNavbar = ({ navbardData }) => {
               {item.services && (
                 <Collapse in={expanded === index} timeout="auto" unmountOnExit>
                   <List component="div" disablePadding>
-                    {item.services.map((child, childIndex) => (
+                    {item?.services?.map((child, childIndex) => (
                       <ListItem key={childIndex} sx={{ pl: 4 }}>
-                        <ListItemText
+                        <Link
+                          to={`service/${child?.pageUrl}`}
                           className="hover:bg-blue-500 hover:text-white-500"
-                          primary={child.service_name && child.service_name}
-                        />
+                        >
+                          {child.service_name && child.service_name}
+                        </Link>
                       </ListItem>
                     ))}
                   </List>
@@ -101,4 +101,6 @@ export const MobileNavbar = ({ navbardData }) => {
       </Drawer>
     </div>
   );
-};
+});
+
+MobileNavbar.displayName = "MobileNavbar";

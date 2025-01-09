@@ -2,6 +2,7 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import { useState } from "react";
+import SouthIcon from "@mui/icons-material/South";
 import CustomEventCalendar from "./TaxCalendar";
 const style = {
   position: "absolute",
@@ -20,18 +21,20 @@ export const Calendar = () => {
   const handleClose = () => setOpen(false);
   return (
     <>
-      <div
-        className=" fixed bottom-6 left-6   rounded-full z-50  transform transition-transform animate-bounce
-    shadow-sm bg-yellow-500 size-14 flex items-center justify-center  cursor-pointer
-    "
-        onClick={handleOpen}
-      >
-        
-        <CalendarMonthIcon
-          className="text-white-500 "
-          style={{ width: "30px", height: "30px" }}
-        />
+      <div className=" fixed bottom-6 left-6 " onClick={handleOpen}>
+        <div className=" transform transition-transform animate-bounce z-50 ml-1 text-yellow-500">
+          {/* <p className="text-lg ">Compliance <br /> Calendar</p> */}
+          <SouthIcon style={{ fontSize: "50px" }} />
+        </div>
+
+        <div className="rounded-full z-50   shadow-sm bg-yellow-500 size-14 flex items-center justify-center  cursor-pointer ">
+          <CalendarMonthIcon
+            className="text-white-500 "
+            style={{ width: "30px", height: "30px" }}
+          />
+        </div>
       </div>
+
       {open && (
         <Modal
           open={open}

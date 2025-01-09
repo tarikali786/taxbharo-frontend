@@ -1,5 +1,4 @@
 import { useEffect, useState, useMemo } from "react";
-import Img1 from "../../assets/Service.jpg";
 import { Button } from "../Common/Button";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
@@ -18,8 +17,6 @@ export const ServiceDetails = () => {
     const response = await get(`/services/${seriveURL}?populate=*`);
     setServiceDetails(response?.data?.data);
   };
-
-  console.log(serviceDetails);
 
   useEffect(() => {
     fetchServiceDetails();
@@ -138,7 +135,7 @@ export const ServiceDetails = () => {
         </div>
       </div>
 
-      <FAQ />
+      {/* <FAQ /> */}
     </div>
   );
 };

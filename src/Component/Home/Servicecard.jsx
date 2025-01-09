@@ -8,7 +8,7 @@ export const ServiceCard = memo(({ data }) => {
 
   return (
     <Link
-      to="/service"
+      to={data?.link}
       className="bg-blue-100 shadow-lg p-4 cursor-pointer rounded-lg boxshadow md:flex justify-between"
     >
       <div className="md:w-1/2">
