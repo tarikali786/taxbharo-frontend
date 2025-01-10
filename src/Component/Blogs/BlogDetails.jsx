@@ -59,7 +59,7 @@ export const BlogDetails = memo(() => {
           {blogDetail?.attributes?.services?.data?.length > 0 ? (
             blogDetail.attributes.services.data.map((item, index) => (
               <Link
-                to={item?.attributes?.pageUrl || "#"}
+                to={`/service/${item?.attributes?.pageUrl}`}
                 className="border rounded-lg py-2 px-3 hover:border-blue-500 hover:border-2 hover:bg-blue-100"
                 key={index}
               >
