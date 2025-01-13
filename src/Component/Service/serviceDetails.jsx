@@ -109,13 +109,16 @@ export const ServiceDetails = () => {
               }
               link={serviceDetails?.attributes?.Button_Url}
             />
-            <Button
-              text={`₹ ${
+
+            <p
+              className={`bg-blue-500 md:px-6 md:py-2 px-2 py-1 rounded-md text-white-500   `}
+            >
+              {`₹ ${
                 serviceDetails?.attributes?.price
                   ? serviceDetails.attributes.price
                   : "0"
               }`}
-            />
+            </p>
           </div>
         </div>
         <div className="flex flex-col md:flex-row justify-between gap-10">

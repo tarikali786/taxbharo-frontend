@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { get } from "../Hook/api";
+
+import Searchicon from "../../assets/Search.png";
 import { Link } from "react-router-dom";
 
 export const SearchBar = () => {
@@ -65,7 +67,7 @@ export const SearchBar = () => {
     >
       <img
         className="md:w-10 md:h-10 w-8 h-8"
-        src="https://www.taxbharo.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsearch.fdc26fb5.png&w=48&q=75"
+        src={Searchicon}
         alt="Search Icon"
       />
       <input
@@ -82,7 +84,7 @@ export const SearchBar = () => {
           {serviceData.length !== 0 && (
             <div>
               <p className="font-semibold text-black-500 mb-1">Services</p>
-              {serviceData.map((item, index) => (
+              {serviceData.slice(0, 5).map((item, index) => (
                 <Link
                   key={index}
                   to={`service/${item?.pageUrl}`}
@@ -96,7 +98,7 @@ export const SearchBar = () => {
           {blogData.length !== 0 && (
             <div className="mt-4">
               <p className="font-semibold text-black-500 mb-1">Blogs</p>
-              {blogData.map((item, index) => (
+              {blogData.slice(0, 5).map((item, index) => (
                 <Link
                   key={index}
                   to={`blog/${item?.url}`}
