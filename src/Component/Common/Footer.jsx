@@ -3,14 +3,36 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GoogleIcon from "@mui/icons-material/Google";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
 import { useCallback, useState } from "react";
 import { post } from "../Hook/api";
 import { Message } from "../Model";
 import Logo from "../../assets/logo.webp";
 import Flag from "../../assets/IndiaFlag.png";
-import XIcon from '@mui/icons-material/X';
+import XIcon from "@mui/icons-material/X";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import SSL2 from "../../assets/SSL2.png";
+import "./index.css";
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  boxShadow: 24,
+  p: 4,
+  borderRadius: 4,
+};
 export const Footer = () => {
+  const [open, setOpen] = useState(false);
+  const [donateValue, setDonateValue] = useState({
+    name: "",
+    email: "",
+    amount: "",
+  });
+
   const [email, setEmail] = useState("");
   const [openModel, setOpenModel] = useState(false);
   const [msg, setMsg] = useState("Thank you for subscribing");
@@ -19,6 +41,18 @@ export const Footer = () => {
   const handleCloseModel = useCallback(() => {
     setOpenModel(false);
   }, [openModel]);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const handleDonateOnchange = ({ target }) => {
+    const { name, value } = target;
+
+    setDonateValue((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
   const handleEmialSubscribes = async (e) => {
     e.preventDefault();
@@ -39,6 +73,9 @@ export const Footer = () => {
     }
   };
 
+  const handleDonateSubmit = () => {
+    console.log("submit Data");
+  };
   return (
     <>
       {openModel && (
@@ -172,35 +209,35 @@ export const Footer = () => {
               </h1>
               <div className="flex justify-center mt-4">
                 <Link
-                  href="https://www.facebook.com/taxbharo"
+                  to="https://www.facebook.com/taxbharo"
                   target="_blank"
                   className="bg-white-500 p-2 rounded-md shadow-1"
                 >
                   <FacebookIcon size={25} className="text-blue-500" />
                 </Link>
                 <Link
-                  href="https://www.instagram.com/taxbharo/"
+                  to="https://www.instagram.com/taxbharo/"
                   target="_blank"
                   className="bg-white-500  p-2 rounded-md shadow-1 ml-6"
                 >
                   <InstagramIcon size={25} className="text-blue-500" />
                 </Link>
                 <Link
-                  href="https://www.linkedin.com/company/taxbharo/?originalSubdomain=in"
+                  to="https://www.linkedin.com/company/taxbharo/?originalSubdomain=in"
                   target="_blank"
                   className="bg-white-500  p-2 rounded-md shadow-1 ml-6"
                 >
                   <LinkedInIcon size={25} className="text-blue-500" />
                 </Link>
                 <Link
-                  href="#"
+                  to="https://www.google.com/localservices/prolist?g2lbs=AOHF13k14F4oyeYC4GKbjf2oHMMIBZIJlG-nx2HHEyRZj-x44bzTcT8FxQG6QtvGc6nMH00pV_Fn&hl=en-IN&gl=in&cs=1&ssta=1&q=taxbharo&oq=taxbharo&slp=MgBSAggCYAB6jAFDZ2gwWVhoaWFHRnliMGlyaTVqWGg2LUFnQWhhRGhBQUdBQWlDSFJoZUdKb1lYSnZrZ0VPZEdGNFgyTnZibk4xYkhSaGJuU3FBVEVRQVRJZkVBRWlHNFpCZmlUSVp1TFZMMm5IZVZOSU9EMG9CVDhpZTNBVkkyZlVHaklNRUFJaUNIUmhlR0pvWVhKdpIBHgoNL2cvMTFzczUzZDE5OAoNL2cvMTFoMXlnZDFmYw%3D%3D&src=2&spp=Cg0vZy8xMWgxeWdkMWZjOnhXZzRRQUJnQUlnaDBZWGhpYUdGeWI1SUJEblJoZUY5amIyNXpkV3gwWVc1MG1nRUFxZ0V4RUFFeUh4QUJJaHVHUVg0a3lHYmkxUzlweDNsVFNEZzlLQVVfSW50d0ZTTm4xQm95REJBQ0lnaDBZWGhpYUdGeWJ3PT0%3D&serdesk=1&lrlstt=1736927385893&ved=2ahUKEwiFnuDUnveKAxWjzTgGHcvLC7UQvS56BAgnEAE&scp=ChNnY2lkOnRheF9jb25zdWx0YW50EkASEglNEMQrg72TORGf8VaoqRy2MCISRmF6aWxuYWdhciwgMjc0NDAxKhQNN03TDxWplQsyHa4R9Q8lqYUnMjABGgh0YXhiaGFybyIIdGF4Ymhhcm8qC1RheCBBZHZpc29y"
                   target="_blank"
                   className="bg-white-500  p-2 rounded-md shadow-1 ml-6"
                 >
                   <GoogleIcon size={25} className="text-blue-500" />
                 </Link>
                 <Link
-                  href="https://x.com/bharotax"
+                  to="https://x.com/bharotax"
                   target="_blank"
                   className="bg-white-500  p-2 rounded-md shadow-1 ml-6"
                 >
@@ -226,6 +263,14 @@ export const Footer = () => {
                 </button>
               </form>
             </div>
+            <div>
+              <button
+                onClick={handleOpen}
+                className="bg-yellow-500 px-4 py-2 capitalize rounded-md  text-white-500 hover:bg-white-500 hover:text-blue-500  active:scale-75 font-semibold transition-transform duration-300 ease-in-out "
+              >
+                donate now
+              </button>
+            </div>
           </div>
         </div>
 
@@ -235,6 +280,68 @@ export const Footer = () => {
           CIN: U69202TS2023PTC174550.
         </div>
       </div>
+      {open && (
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style} className="relative">
+            <HighlightOffIcon
+              className=" absolute top-4 right-6 cursor-pointer"
+              onClick={handleClose}
+            />
+            <form className="space-y-3 mt-2">
+              <label htmlFor="name" className="block text-black-400">
+                Your Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className="w-full p-2 border border-gray-300 rounded-md"
+                placeholder="Full Name"
+                required
+                value={donateValue.name}
+              />
+
+              <label htmlFor="email" className="block text-black-400">
+                Email Address
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="w-full p-2 border border-gray-300 rounded-md"
+                placeholder="Email Address"
+                required
+                value={donateValue.email}
+              />
+              <label htmlFor="amount" className="block text-gray-700">
+                Donation Amount
+              </label>
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                className="w-full p-2 border border-gray-300 rounded-md"
+                placeholder="Enter Amount"
+                required
+                value={donateValue.amount}
+              />
+              <div className="pt-4">
+                <button
+                  type="submit"
+                  className="bg-blue-500 text-white-500 w-full py-3  rounded-md hover:bg-yellow-500 transition duration-300"
+                >
+                  Donate Now
+                </button>
+              </div>
+            </form>
+          </Box>
+        </Modal>
+      )}
     </>
   );
 };

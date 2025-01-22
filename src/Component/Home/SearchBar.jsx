@@ -73,7 +73,7 @@ export const SearchBar = () => {
       <input
         className="w-full border-none outline-none"
         type="text"
-        placeholder="Documents required for income tax filing in 2024?"
+        placeholder="Search your query here..."
         spellCheck
         value={searchTitle}
         onChange={(e) => setSearchTitle(e.target.value)}

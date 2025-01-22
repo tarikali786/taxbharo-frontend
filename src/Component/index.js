@@ -7,3 +7,4 @@ export * from "./Policy";
 export * from "./About";
 export * from "./Model";
 export * from "./Google Review";
+export * from "./Page";

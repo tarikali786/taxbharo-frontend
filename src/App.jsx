@@ -6,11 +6,13 @@ import {
   BlogDetails,
   Blogs,
   Calendar,
+  Fail,
   FAQs,
   PrivacyAndPolicy,
   Service,
   ServiceDetails,
   SignIn,
+  Success,
   TermsAndCondition,
   VerifyNumber,
   VerifyOTP,
@@ -44,6 +46,8 @@ function App() {
             />
             <Route path="/faq" element={<FAQs />} />
             <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/success" element={<Success />} />
+            <Route path="/fail" element={<Fail />} />
           </Route>
 
           <Route path="/auth" element={<AuthLayout />}>

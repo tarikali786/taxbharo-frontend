@@ -9,7 +9,7 @@ export const WhatsApp = () => {
     <Link
       target="_blank"
       to={`https://wa.me/917286058270?text=${message}`}
-      className="fixed bottom-6 right-6 transform transition-transform animate-bounce rounded-full z-50 shadow-sm"
+      className="fixed bottom-6 right-6 rounded-full z-50 shadow-sm"
     >
       <img
         src={WhatsAppIcon}

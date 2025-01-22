@@ -1,4 +1,3 @@
-import SSLImage from "../../assets/SSlLogo.jfif";
 import SSL2 from "../../assets/SSL2.png";
 
 export const SSLLogo = () => {
@@ -17,7 +16,7 @@ export const SSLLogo = () => {
           Experience safe and trusted services with Taxbharo.
         </i>
       </div>
-      <div className="">
+      <div className="h-16 lg:h-20">
         <img src={SSL2} alt="ssl-logo" loading="lazy" />
       </div>
     </div>

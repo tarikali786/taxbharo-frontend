@@ -76,7 +76,7 @@ export const GoogleReview = () => {
         >
           {reviews?.map((item, index) => (
             <SwiperSlide key={index} className="bg-white-500">
-              <div className="w-full  min-h-40 border m-auto rounded-[50px] overflow-hidden border-pink-500 flex flex-col justify-center items-center py-10 bg-[#2b2338]">
+              <div className="w-full  min-h-40 border m-auto rounded-[50px] overflow-hidden border-pink-500 flex flex-col justify-center items-center py-10 bg-[#668fc6]">
                 <div
                   className={`size-28 border-2 rounded-full flex justify-center items-center ${
                     item?.author_name

@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet"; // Import Helmet
 import { Business } from "./Business";
-// import { DownloadApp } from "./DownloadApp";
 import { Insights } from "./Insights";
 import { SearchBar } from "./SearchBar";
 import { Service } from "./Service";
@@ -11,7 +10,19 @@ import { SSLLogo } from "./SSL-logo";
 import { GoogleReview } from "../Google Review";
 
 const Home = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const today = new Date().toISOString().split("T")[0];
+
+    // Get the stored dat from localStorage
+    const storedDate = localStorage.getItem("lastDisclaimerDate");
+
+    if (storedDate !== today) {
+      setOpen(true);
+      localStorage.setItem("lastDisclaimerDate", today); 
+    }
+  }, []);
 
   return (
     <div className="relative">
@@ -25,7 +36,6 @@ const Home = () => {
           name="about"
           content="Taxbharo is a budding online platform to help us reach your income tax solutions effectively."
         />
-
         <meta property="og:title" content="Taxbharo - Home | IT Services" />
         <meta
           property="og:description"
@@ -33,7 +43,6 @@ const Home = () => {
         />
         <meta property="og:url" content="https://www.taxbharo.in" />
         <meta property="og:type" content="website" />
-
         <link rel="canonical" href="https://www.taxbharo.in" />
       </Helmet>
 
@@ -42,7 +51,7 @@ const Home = () => {
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -100 }}
         transition={{ duration: 0.5 }}
-        className="w-full md:px-10 lg:px-16 xl:px-44  px-6 py-4"
+        className="w-full md:px-10 lg:px-16 xl:px-44 px-6 py-4"
       >
         <SearchBar />
         <Insights />
