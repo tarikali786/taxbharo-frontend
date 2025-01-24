@@ -2,6 +2,14 @@ import Img1 from "../assets/img1.png";
 import Img2 from "../assets/img4.png";
 import Img3 from "../assets/img2.png";
 import Img4 from "../assets/img3.png";
+import Img5 from "../assets/icons8-protect-80.png";
+import Img6 from "../assets/icons8-lost-80.png";
+import Img7 from "../assets/icons8-pet-80.png";
+import Img8 from "../assets/icons8-sippy-cup-80.png";
+import Img11 from "../assets/icons8-volunteering-80.png";
+import Img10 from "../assets/icons8-medical-80.png";
+import Img9 from "../assets/icons8-dog-park-80.png";
+import Img12 from "../assets/icons8-spreading-80.png";
 export const NavbarData = [
   {
     name: "Income Tax",
@@ -464,5 +472,66 @@ export const RelatedBlog = [
     description:
       "   In purus at morbi magna in in maecenas. Nunc nulla magna elit, varius     phasellus blandit convallis.",
     img: "https://www.taxbharo.in/_next/image?url=https%3A%2F%2Ftaxbharo-images.s3.us-east-1.amazonaws.com%2Fblogs%2F1716353749919.png&w=1920&q=75",
+  },
+];
+
+export const donateMatterData = [
+  {
+    icon: Img5,
+    title: "Protectors of Our Streets",
+    content:
+      "Street animals keep pests away, bring joy to neighborhoods, and help maintain balance in nature. They are part of our community. ",
+  },
+  {
+    icon: Img6,
+    title: "Lost and Abandoned",
+    content:
+      "Many animals on the streets were once loved pets but were abandoned by families or lost. Some come from breeders who discard animals they cannot sell.  ",
+  },
+  {
+    icon: Img7,
+    title: "Innocent Companions in Need",
+    content:
+      "  Imagine a pet, scared and hungry, wandering the streets because their family left them. With your help, we can give them safety and love again.  ",
+  },
+];
+
+export const donateDoingData = [
+  {
+    icon: Img8,
+    title: "Feeding Programs",
+    content1:
+      "Every day, we provide food for *over 100 animals* in Hyderabad, including dogs, cats, and birds.   ",
+    content2: "We’ve set up food and water stations in public areas.  ",
+  },
+  {
+    icon: Img9,
+    title: "Rescuing Abandoned Pets",
+    content1:
+      "We work to rescue pets left on the streets and find them loving homes.   ",
+    content2: "Collaborating with local groups, we’ve rehomed many animals.   ",
+  },
+  {
+    icon: Img10,
+    title: "Medical Aid and Sterilization",
+    content1:
+      "  We support sterilization drives to control overpopulation (*₹1,000 per animal*).  ",
+    content2:
+      "  Emergency medical care for sick or injured animals is also funded by us. ",
+  },
+
+  {
+    icon: Img11,
+    title: "Supporting Shelters",
+    content1:
+      "  We help animal shelters with food, medicines, and maintenance.   ",
+  },
+  {
+    icon: Img12,
+    title: "Spreading Awareness",
+    content1:
+      " We educate people about adopting animals instead of buying.    ",
+    content2:
+      "  Workshops help pet owners and breeders understand responsible care and discourage overbreeding.    ",
   },
 ];

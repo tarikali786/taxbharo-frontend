@@ -6,6 +6,7 @@ import {
   BlogDetails,
   Blogs,
   Calendar,
+  Donate,
   Fail,
   FAQs,
   PrivacyAndPolicy,
@@ -18,6 +19,8 @@ import {
   VerifyOTP,
   WhatsApp,
 } from "./Component";
+import { ToastContainer } from "react-toastify";
+
 import Layout1 from "./Layout/Layout1";
 import AuthLayout from "./Layout/AuthLayout";
 import WithLazyComponet from "./LazyLoading/WithLazyLoading";
@@ -38,6 +41,7 @@ function App() {
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blog/:url" element={<BlogDetails />} />
             <Route path="/service" element={<Service />} />
+            <Route path="/donate" element={<Donate />} />
             <Route path="/service/:seriveURL" element={<ServiceDetails />} />
             <Route path="/privacy-and-policy" element={<PrivacyAndPolicy />} />
             <Route
@@ -59,6 +63,13 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
           <Route path="/error" element={<ErrorPage />} />
         </Routes>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          closeOnClick
+          pauseOnHover
+          draggable
+        />
       </ErrorBoundary>
       <Calendar />
     </AnimatePresence>

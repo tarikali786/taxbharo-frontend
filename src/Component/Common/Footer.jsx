@@ -3,36 +3,17 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GoogleIcon from "@mui/icons-material/Google";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
+
 import { useCallback, useState } from "react";
 import { post } from "../Hook/api";
 import { Message } from "../Model";
 import Logo from "../../assets/logo.webp";
 import Flag from "../../assets/IndiaFlag.png";
 import XIcon from "@mui/icons-material/X";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import SSL2 from "../../assets/SSL2.png";
 import "./index.css";
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  boxShadow: 24,
-  p: 4,
-  borderRadius: 4,
-};
-export const Footer = () => {
-  const [open, setOpen] = useState(false);
-  const [donateValue, setDonateValue] = useState({
-    name: "",
-    email: "",
-    amount: "",
-  });
 
+export const Footer = () => {
   const [email, setEmail] = useState("");
   const [openModel, setOpenModel] = useState(false);
   const [msg, setMsg] = useState("Thank you for subscribing");
@@ -41,18 +22,6 @@ export const Footer = () => {
   const handleCloseModel = useCallback(() => {
     setOpenModel(false);
   }, [openModel]);
-
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
-  const handleDonateOnchange = ({ target }) => {
-    const { name, value } = target;
-
-    setDonateValue((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
 
   const handleEmialSubscribes = async (e) => {
     e.preventDefault();
@@ -73,9 +42,6 @@ export const Footer = () => {
     }
   };
 
-  const handleDonateSubmit = () => {
-    console.log("submit Data");
-  };
   return (
     <>
       {openModel && (
@@ -264,12 +230,12 @@ export const Footer = () => {
               </form>
             </div>
             <div>
-              <button
-                onClick={handleOpen}
+              <Link
+                to="/donate"
                 className="bg-yellow-500 px-4 py-2 capitalize rounded-md  text-white-500 hover:bg-white-500 hover:text-blue-500  active:scale-75 font-semibold transition-transform duration-300 ease-in-out "
               >
                 donate now
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -280,68 +246,6 @@ export const Footer = () => {
           CIN: U69202TS2023PTC174550.
         </div>
       </div>
-      {open && (
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style} className="relative">
-            <HighlightOffIcon
-              className=" absolute top-4 right-6 cursor-pointer"
-              onClick={handleClose}
-            />
-            <form className="space-y-3 mt-2">
-              <label htmlFor="name" className="block text-black-400">
-                Your Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                className="w-full p-2 border border-gray-300 rounded-md"
-                placeholder="Full Name"
-                required
-                value={donateValue.name}
-              />
-
-              <label htmlFor="email" className="block text-black-400">
-                Email Address
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full p-2 border border-gray-300 rounded-md"
-                placeholder="Email Address"
-                required
-                value={donateValue.email}
-              />
-              <label htmlFor="amount" className="block text-gray-700">
-                Donation Amount
-              </label>
-              <input
-                type="number"
-                id="amount"
-                name="amount"
-                className="w-full p-2 border border-gray-300 rounded-md"
-                placeholder="Enter Amount"
-                required
-                value={donateValue.amount}
-              />
-              <div className="pt-4">
-                <button
-                  type="submit"
-                  className="bg-blue-500 text-white-500 w-full py-3  rounded-md hover:bg-yellow-500 transition duration-300"
-                >
-                  Donate Now
-                </button>
-              </div>
-            </form>
-          </Box>
-        </Modal>
-      )}
     </>
   );
 };
