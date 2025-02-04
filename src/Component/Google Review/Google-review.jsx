@@ -68,10 +68,10 @@ export const GoogleReview = () => {
             dynamicBullets: true,
           }}
           modules={[EffectCoverflow, Pagination, Autoplay]}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 5000,
+          //   disableOnInteraction: false,
+          // }}
           className="bg-white-500"
         >
           {reviews?.map((item, index) => (

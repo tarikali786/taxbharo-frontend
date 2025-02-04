@@ -12,6 +12,7 @@ import Flag from "../../assets/IndiaFlag.png";
 import XIcon from "@mui/icons-material/X";
 import SSL2 from "../../assets/SSL2.png";
 import "./index.css";
+import { MemberDiscount } from "../Model/Member-discount";
 
 export const Footer = () => {
   const [email, setEmail] = useState("");
@@ -19,6 +20,7 @@ export const Footer = () => {
   const [msg, setMsg] = useState("Thank you for subscribing");
   const [color, setColor] = useState("");
 
+  const [memberShow, setMemberShow] = useState(false);
   const handleCloseModel = useCallback(() => {
     setOpenModel(false);
   }, [openModel]);
@@ -44,6 +46,7 @@ export const Footer = () => {
 
   return (
     <>
+      {memberShow && <MemberDiscount setMemberShow={setMemberShow} />}
       {openModel && (
         <Message msg={msg} color={color} onClick={handleCloseModel} />
       )}
@@ -162,9 +165,12 @@ export const Footer = () => {
                 Terms & Conditions
               </Link>
               {/* <Link className="text-white-500 text-md py-1">How it works</Link> */}
-              <Link className="text-white-500 text-md py-1">
+              <div
+                onClick={() => setMemberShow(!memberShow)}
+                className="text-white-500 text-md py-1 cursor-pointer"
+              >
                 Member Discounts
-              </Link>
+              </div>
             </div>
           </div>
 
