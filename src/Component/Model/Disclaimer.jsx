@@ -25,7 +25,7 @@ export const Disclaimer = memo(({ open, setOpen }) => {
               </h1>
               <HighlightOffIcon
                 onClick={handleClose}
-                className="absolute top-4 right-4 cursor-pointer  hover:scale-110"
+                className="fixed top-2 right-2 cursor-pointer  hover:scale-110"
                 style={{ width: "36px", height: "36px" }}
               />
             </div>

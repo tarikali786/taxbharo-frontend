@@ -1,9 +1,11 @@
 * {
   margin: 0;
-  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-family: "Helvetica", "Arial", sans-serif;
   box-sizing: border-box;
 }
-
+body {
+  padding: 0 !important;
+}
 :root {
   --brand-color: #4762ff;
   --heading-color: #333333;

@@ -34,7 +34,7 @@ export const GoogleReview = () => {
   }, []);
   const getColorForLetter = (letter) => {
     const char = letter.toUpperCase(); // Ensure case-insensitivity
-    if (char >= "A" && char <= "D") return "bg-blue-500";
+    if (char >= "A" && char <= "D") return "bg-blue-600";
     if (char >= "E" && char <= "H") return "bg-yellow-500";
     if (char >= "I" && char <= "M") return "bg-yellow-400";
     if (char >= "N" && char <= "Z") return "bg-yellow-300";
@@ -76,7 +76,7 @@ export const GoogleReview = () => {
         >
           {reviews?.map((item, index) => (
             <SwiperSlide key={index} className="bg-white-500">
-              <div className="w-full  min-h-40 border m-auto rounded-[50px] overflow-hidden border-pink-500 flex flex-col justify-center items-center py-10 bg-[#668fc6]">
+              <div className="w-full  min-h-40 border m-auto rounded-[50px] overflow-hidden border-pink-500 flex flex-col justify-center items-center py-10 bg-blue-500">
                 <div
                   className={`size-28 border-2 rounded-full flex justify-center items-center ${
                     item?.author_name

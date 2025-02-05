@@ -4,6 +4,7 @@ import Modal from "@mui/material/Modal";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { post } from "../Hook/api";
+import axios from "axios";
 
 export const MemberDiscount = ({ setMemberShow }) => {
   const [open, setOpen] = useState(true); // Ensure open state exists
@@ -29,28 +30,19 @@ export const MemberDiscount = ({ setMemberShow }) => {
     }));
   };
 
-  const handleDiscountSubmit = async(e) => {
+  const handleDiscountSubmit = async (e) => {
     e.preventDefault();
-
-    // Validate required fields before submitting
-    if (!discountValue.name || !discountValue.email || !discountValue.phone) {
-      toast.error("Please fill in all required fields.");
-      return;
-    }
-
-    console.log(discountValue);
-    
 
     setLoading(true);
     try {
-      const res = await post("/member-discounts", discountValue);
-        console.log(res);
-        
+      const res = await post("/member-discounts", { data: discountValue });
+      console.log(res);
+
       if (res?.data) {
         toast.success(
           "Thank you! Your request for a member discount has been successfully submitted."
         );
-        handleClose(); // Close modal on success
+        handleClose();
       } else {
         throw new Error("Unexpected response from server");
       }

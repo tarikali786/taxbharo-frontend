@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { memo, useState } from "react";
 import Logo from "../../assets/logo.webp";
-// import { useTaxbharoContext } from "../ContextHook/taxbharoProvider";
 export const DesktopNavbar = memo(({ navbardData }) => {
   const [hoverIndex, setHoverIndex] = useState(null);
   const [activeTab, setActivetab] = useState("");
@@ -16,7 +15,7 @@ export const DesktopNavbar = memo(({ navbardData }) => {
         className={`sticky hidden top-0 z-50 md:hidden lg:flex flex-wrap w-full md:px-10 lg:px-16 xl:px-44 px-2 py-4 shadow-sm items-center justify-between gap-2 bg-blue-500  `}
       >
         <Link to="/" className="md:w-32 md:h-10 w-28 h-8">
-          <img src={Logo} alt="" />
+          <img src={Logo} alt="taxbahro" />
         </Link>
         <div className="xl:gap-6 lg:gap-4 md:gap-2 hidden md:flex  items-center ">
           {navbardData?.map((item, index) => (
@@ -67,10 +66,7 @@ export const DesktopNavbar = memo(({ navbardData }) => {
       >
         <div className="flex  justify-between">
           <Link to="/" className="md:w-32 md:h-10 w-28 h-8">
-            <img
-              src="https://www.taxbharo.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.6272d145.png&w=1920&q=75"
-              alt=""
-            />
+            <img src={Logo} alt="" />
           </Link>
           <Link
             to="/blogs"

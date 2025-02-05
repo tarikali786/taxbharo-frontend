@@ -20,12 +20,12 @@ const Home = () => {
 
     if (storedDate !== today) {
       setOpen(true);
-      localStorage.setItem("lastDisclaimerDate", today); 
+      localStorage.setItem("lastDisclaimerDate", today);
     }
   }, []);
 
   return (
-    <div className="relative">
+    <div>
       <Helmet>
         <title>Taxbharo - Home | IT Services</title>
         <meta

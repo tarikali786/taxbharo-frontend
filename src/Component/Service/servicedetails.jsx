@@ -52,18 +52,20 @@ export const ServiceDetails = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:gap-x-4 xl:gap-x-8 gap-6">
+        <div className="grid md:grid-cols-1 lg:grid-cols-2 lg:gap-x-4 xl:gap-x-8 gap-6">
           <div className="rounded-xl overflow-hidden w-full h-[26vh] lg:h-[42vh] shadow-lg">
-            {isLoading && <SkeletonLoading />}
-
-            <img
-              alt=""
-              src={`${import.meta.env.VITE_IMAGE_URL}${
-                serviceDetails?.attributes?.photo?.data?.attributes?.url
-              }`}
-              className="object-fill w-full h-full"
-              onLoad={() => setIsLoading(false)}
-            />
+            {isLoading ? (
+              <SkeletonLoading />
+            ) : (
+              <img
+                alt=""
+                src={`${import.meta.env.VITE_IMAGE_URL}${
+                  serviceDetails?.attributes?.photo?.data?.attributes?.url
+                }`}
+                className="object-fill w-full h-full"
+                onLoad={() => setIsLoading(false)}
+              />
+            )}
           </div>
           <div className="p-4 shadow-lg rounded-xl bg-blue-100">
             <h1 className="text-xl font-semibold">Documents Required</h1>
