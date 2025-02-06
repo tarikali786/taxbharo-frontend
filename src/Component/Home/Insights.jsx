@@ -40,7 +40,7 @@ export const Insights = () => {
         Stay updated with our latest <br /> articles and insights.
       </p>
 
-      <div className="my-10 md:mt-20 grid md:grid-cols-2 lg:grid-cols-2 gap-x-12 gap-y-8">
+      <div className="my-10 md:mt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
         {blogsData.map((item, index) => (
           <InsightsCard key={index} item={item} index={index} />
         ))}

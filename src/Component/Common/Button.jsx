@@ -5,7 +5,7 @@ export const Button = ({ text = "Search", link, onClick }) => {
     <Link
       onClick={onClick}
       to={link}
-      className={`bg-blue-500 md:px-6 md:py-2 px-2 py-1 rounded-md text-white-500  transform transition-transform  animate-bounce `}
+      className={`bg-blue-500 md:px-6 md:py-2 px-2 py-1 rounded-md text-white-500  transform transition-transform  animate-pulse `}
     >
       {text}
     </Link>
