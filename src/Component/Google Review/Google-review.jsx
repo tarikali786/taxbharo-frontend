@@ -76,7 +76,7 @@ export const GoogleReview = () => {
         >
           {reviews?.map((item, index) => (
             <SwiperSlide key={index} className="bg-white-500">
-              <div className="w-full  min-h-40 border m-auto rounded-[50px] overflow-hidden border-pink-500 flex flex-col justify-center items-center py-10 bg-blue-500">
+              <div className="w-full  min-h-40 border m-auto  rounded-xl overflow-hidden border-pink-500 flex flex-col justify-center items-center py-10 bg-blue-100">
                 <div
                   className={`size-28 border-2 rounded-full flex justify-center items-center ${
                     item?.author_name
@@ -94,7 +94,7 @@ export const GoogleReview = () => {
                   )}
                 </div>
 
-                <h3 className="text-xl font-semibold  mt-4">
+                <h3 className="text-xl text-black-500 font-semibold  mt-4">
                   {item?.author_name}
                 </h3>
                 <div className="mt-2">
@@ -103,7 +103,7 @@ export const GoogleReview = () => {
                   ))}
                 </div>
 
-                <p className="my-6 w-[80%] text-white-500 text-sm ">
+                <p className="my-6 w-[80%] text-black-500 text-sm ">
                   {item?.text}
                 </p>
               </div>

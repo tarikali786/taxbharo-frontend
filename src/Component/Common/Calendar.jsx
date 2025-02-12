@@ -30,10 +30,10 @@ export const Calendar = () => {
       <div className=" fixed bottom-6 left-6 " onClick={handleOpen}>
         {calShow && (
           <div
-            className=" relative transform transition-transform animate-bounce z-50 ml-1 mb-3 bg-yellow-500 w-[140px] 
-          px-2 py-1 text-blue-600 *:-translate-x-1/2 rounded-md  rounded-bl-none "
+            className=" relative transform transition-transform animate-bounce z-50 ml-1 mb-3 bg-yellow-500 
+          px-2 py-[8px] text-black-500 *:-translate-x-1/2 rounded-md  rounded-bl-none text-sm"
           >
-            Lorem ipsum dolor sit amet.
+            Stay ahead of Deadlines <br /> Check out Our Tax Calendar
             <ArrowDropDownIcon
               className="  absolute -bottom-[33px] left-[12px]   text-yellow-500 "
               style={{ fontSize: "58px" }}

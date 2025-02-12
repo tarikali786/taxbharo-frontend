@@ -60,7 +60,7 @@ const handleRequestError = (error) => {
       throw new Error("Unauthorized Access. Invalid Credentials.");
     }
     if (error.response.status === 500) {
-      window.location.href = "/error";
+      // window.location.href = "/error";
       throw new Error("Internal Server Error. Please try again later.");
     }
     // if (error.response.status === 400) {

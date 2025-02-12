@@ -13,6 +13,7 @@ import XIcon from "@mui/icons-material/X";
 import SSL2 from "../../assets/SSL2.png";
 import "./index.css";
 import { MemberDiscount } from "../Model/Member-discount";
+import { BugBounty } from "../Model/Bugbounty";
 
 export const Footer = () => {
   const [email, setEmail] = useState("");
@@ -21,6 +22,7 @@ export const Footer = () => {
   const [color, setColor] = useState("");
 
   const [memberShow, setMemberShow] = useState(false);
+  const [showBug, setShowBug] = useState(false);
   const handleCloseModel = useCallback(() => {
     setOpenModel(false);
   }, [openModel]);
@@ -47,6 +49,7 @@ export const Footer = () => {
   return (
     <>
       {memberShow && <MemberDiscount setMemberShow={setMemberShow} />}
+      {showBug && <BugBounty setShowBug={setShowBug} />}
       {openModel && (
         <Message msg={msg} color={color} onClick={handleCloseModel} />
       )}
@@ -167,9 +170,16 @@ export const Footer = () => {
               {/* <Link className="text-white-500 text-md py-1">How it works</Link> */}
               <div
                 onClick={() => setMemberShow(!memberShow)}
-                className="text-white-500 text-md py-1 cursor-pointer"
+                className="text-white-500 text-md  cursor-pointer"
               >
                 Member Discounts
+              </div>
+
+              <div
+                onClick={() => setShowBug(!showBug)}
+                className="text-white-500 text-md cursor-pointer"
+              >
+                Bug bounty
               </div>
             </div>
           </div>

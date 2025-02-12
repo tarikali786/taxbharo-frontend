@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <div>
       <Helmet>
-        <title>Taxbharo - Home | IT Services</title>
+        <title>Taxbharo - UNDERSTAND | PLAN | FILE</title>
         <meta
           name="description"
           content="It's easy to navigate tax season with our swift and accurate income tax ... The information is provided by www.taxbharo.in, a property of Taxbharo. While ..."
@@ -36,14 +36,16 @@ const Home = () => {
           name="about"
           content="Taxbharo is a budding online platform to help us reach your income tax solutions effectively."
         />
-        <meta property="og:title" content="Taxbharo - Home | IT Services" />
+        <meta property="og:title" content="Taxbharo -UNDERSTAND | PLAN | FILE" />
         <meta
           property="og:description"
           content="It's easy to navigate tax season with our swift and accurate income tax solutions. The information is provided by www.taxbharo.in, a property of Taxbharo."
         />
         <meta property="og:url" content="https://www.taxbharo.in" />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://www.taxbharo.in" />
+        <link rel="canonical" href="https://www.taxbharo.in/service/file-original-income-tax-returns-resident-individuals-1" />
+        <link rel="canonical" href="https://www.taxbharo.in/service/file-original-income-tax-returns-resident-individuals-1" />
+        <link rel="canonical" href="https://www.taxbharo.in/service/file-original-income-tax-returns-resident-individuals-1" />
       </Helmet>
 
       <motion.div
