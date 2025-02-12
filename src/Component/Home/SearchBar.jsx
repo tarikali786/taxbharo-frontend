@@ -148,8 +148,8 @@ export const SearchBar = () => {
               </p>
               {calendarData.slice(0, 5).map((item, index) => (
                 <div key={index} className="py-2">
+                  <h3 className="text-[16px] text-center ">{item?.date}</h3>
                   <p className="text-sm   font-semibold">{item?.event}</p>
-                  <h3 className="text-[16px] ">{item?.date}</h3>
                   <p className="text-sm ">{item?.description}</p>
                 <hr />
                 </div>
