@@ -156,28 +156,28 @@ export const NavbarData = [
 
 export const ServiceData = [
   {
-    link: "/service/file-original-income-tax-returns-resident-individuals-1",
+    link: "/service/file-original-income-tax-returns-resident-individuals-2",
     title: "Income Tax Returns",
     description:
       "It's easy to navigate tax season with our swift and accurate income tax return filing service, ensuring compliance and peace of mind for individuals and businesses alike.",
     img: Img1,
   },
   {
-    link: "/service/gst-registration-casual-permanent-regular-composition-ecommerce",
+    link: "/service/gst-registration-casual-permanent-regular-composition-ecommerce-1",
     title: "GST Registration & Filing",
     description:
       "Simplify compliance with our streamlined GST registration and filing service, ensuring accuracy and ease for businesses navigating the complexities of Goods and Services Tax.",
     img: Img2,
   },
   {
-    link: "/service/incorporation-of-private-company",
+    link: "/service/incorporation-of-private-company-1",
     title: "Company Formation",
     description:
       "Effortless company formation with our expert service, guiding you through the process seamlessly for a smooth start to your business journey.",
     img: Img3,
   },
   {
-    link: "/service/trademark-application",
+    link: "/service/trademark-application-1",
     title: "Legal & Trademark",
     description:
       "Safeguard your brand with our comprehensive Legal & Trademark services, offering expert guidance for secure and compliant protection of your intellectual property.",
