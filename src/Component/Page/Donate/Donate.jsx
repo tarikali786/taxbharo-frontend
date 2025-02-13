@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 // import { toast } from "react-toastify";
@@ -12,6 +12,9 @@ export const Donate = () => {
     amount: "",
   });
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const handleChange = ({ target: { name, value } }) => {
     setDonateValue((prev) => ({ ...prev, [name]: value }));
   };
@@ -22,7 +25,7 @@ export const Donate = () => {
   const handleSubmitForm = async (e) => {
     e.preventDefault();
     try {
-      const api = "http://127.0.0.1:8080/ccavRequestHandler";
+      const api = "https://api.taxbharo.in/ccavRequestHandler";
       const response = await axios.post(api, donateValue, {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -43,14 +46,14 @@ export const Donate = () => {
   };
 
   const submitCCForm = (encRequestData) => {
-    const access_code = "ATQA06MA13BW01AQWB";
+    const access_code = "AVIK49MA24CA22KIAC";
     const merchant_id = "3371562";
 
     // Dynamically create a form
     const form = document.createElement("form");
     form.method = "POST";
     form.action =
-      "https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction";
+      "https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction";
 
     // Add hidden fields to the form
     const merchantIdInput = document.createElement("input");
